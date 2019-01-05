@@ -199,6 +199,15 @@ small{
 	background-size: 30%;
 	background-position: top;
 }
+.restpassdpanel h3{
+	color: black;
+	box-shadow: inset -4px 0px 0 black;
+	background-color: white;
+}
 
+.restpassdpanel p{
+	text-align: center;
+	font-size: 14px;
+}
 
 /* RESET PASSWORD PAGE */
