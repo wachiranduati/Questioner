@@ -80,3 +80,28 @@ small, .rightpanel a{
 
 
 /* SIGNUP PAGE */
+/* LOGIN PAGE */
+
+
+.loginrhtpanel{
+  background: url('../images/change.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /* height: 210px; */
+}
+.loginlftpanel form{
+	padding-top: 10px;
+}
+
+
+.loginlftpanel label{
+	font-size: 12px;
+}
+.titleQstner{
+	display: inline;
+}
+
+.frontpg_info{
+  background-color: rgba(0, 0, 0, 0.63);
+}
+/* LOGIN PAGE */

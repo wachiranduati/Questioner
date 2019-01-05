@@ -93,3 +93,25 @@ small{
   display: block;
 }
 /* SIGNUP PAGE */
+
+/* LOGIN PAGE */
+
+
+.loginrhtpanel .frontpg_info{
+	background-color: rgba(0, 0, 0, 0.63);
+	padding: 5px 0 20px 0;
+}
+.loginlftpanel form{
+	padding-top: 50px;
+
+}
+
+.loginlftpanel label{
+	font-size: 12px;
+}
+.titleQstner{
+	display: inline;
+}
+
+
+/* LOGIN PAGE */
