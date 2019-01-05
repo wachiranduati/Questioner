@@ -183,6 +183,10 @@ small{
 	font-weight: 900;
 }
 
+.admnrghtpanel a {
+	margin-top: 5px;
+}
+
 /* ADMIN LOGIN PAGE */
 
 /* RESET PASSWORD PAGE */

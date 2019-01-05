@@ -172,10 +172,14 @@ small{
 }
 .admnrghtpanel form{
 	background-color: rgba(249, 249, 249, 0.79);
-	padding: 10px 0 10px 0;
+	padding: 10px 0 25px 0;
 }
 .admnrghtpanel form label{
 	font-weight: 900;
+}
+
+.admnrghtpanel a {
+	margin-top: 5px;
 }
 
 /* ADMIN LOGIN PAGE */
