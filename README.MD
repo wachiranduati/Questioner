@@ -1,11 +1,25 @@
 ## Questioner
 
 Questioner is a web app that enables users to create meetups and post questions and comments on the meetups and do basic log monitoring via the user's profile. Users can monitor upcoming meetups and even go further to have a curated list of top questions on upcoming meetups accessible right in their profile.
-
+## Features available on Questioner app
+ 1. User can register
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Installation
+### First clone this repository
+```
+    git clone this repo or download it into your local machine.
+
+    $ git clone https://github.com/wachiranduati/Questioner.git
+
+    cd into the root folder of the repo
+
+    $ cd Questioner
+
+    Open the signup.html page in your preferred browser
+    ```
+
 
 ### Prerequisites
 
