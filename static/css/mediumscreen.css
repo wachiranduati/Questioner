@@ -116,3 +116,66 @@ small{
 
 
 /* LOGIN PAGE */
+
+/* ADMIN LOGIN PAGE */
+.admnoverl{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	display: flex;
+	justify-content: center;
+}
+.admnsgnbox{
+	width: 50%;
+	height: auto;
+}
+.admnrghtpanel h3{
+	width: 100%;
+	background-color: black;
+	padding: 15px 0 15px 0;
+	margin-top: 0;
+	color: white;
+}
+
+.admnrghtpanel form{
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding: 0;
+}
+
+.admnrghtpanel form input[type="submit"]{
+	background-color: white;
+	border:2px solid #8100FF;
+	border-radius: 2px;
+	color: #8100FF;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.admnrghtpanel form input[type="submit"]:hover{
+	background-color: #8100FF;
+	border:2px solid white;
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.logoadmn{
+	position: absolute;
+	top: 35px;
+	left: 45%;;
+}
+.admnrghtpanel{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+.admnrghtpanel form{
+	background-color: rgba(249, 249, 249, 0.79);
+	padding: 10px 0 10px 0;
+}
+.admnrghtpanel form label{
+	font-weight: 900;
+}
+
+/* ADMIN LOGIN PAGE */
