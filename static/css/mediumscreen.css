@@ -4,6 +4,7 @@ bright purple
 dark purple
 8100FF
 */
+
 small{
 	font-size: 12px;
 }
@@ -39,14 +40,16 @@ small{
 }
 .leftpanel{
 	background-color: black;
-	flex-grow: 2.2;
+	flex-grow: 1;
+  min-width: 350px;
+  max-width: 200px;
 
 }
 .rightpanel{
 	background-color: white;
 	height: 100%;
-	flex-grow: 3;
-	min-width: 500px;
+	flex-grow: 2;
+	min-width: 350px;
 	justify-content: center;
 
 }
@@ -85,11 +88,9 @@ small{
 	min-height: 20px;
 	max-height: 100px;
 }
-.titleQstner{
-	display: none;
-}
 
 .leftpanel h3, .leftpanel h5{
   display: block;
 }
+
 /* SIGNUP PAGE */
