@@ -184,3 +184,17 @@ small{
 }
 
 /* ADMIN LOGIN PAGE */
+
+/* RESET PASSWORD PAGE */
+.restpassdpanel form{
+	padding: 0 0 50px 0;
+	margin-bottom: 0;
+}
+.resetpssdbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+
+
+/* RESET PASSWORD PAGE */
