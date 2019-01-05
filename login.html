@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Questioner Signup</title>
+	<title>Questioner Login</title>
   <!-- small screen -->
   <link rel="stylesheet" media="screen and (min-width: 600px)" href="static/css/smallscreen.css">
   <!-- medium screen-->
@@ -17,7 +17,7 @@
 <body class="signup_bod">
 	<div class="overlay">
     <div class="signupbox">
-			<div class="panel leftpanel loginrhtpanel">
+      <div class="panel leftpanel loginrhtpanel">
         <div class="frontpg_info">
         <a href="#">
           <img class="logo" src="static/images/logo.png" alt="Questioner logo">
@@ -29,21 +29,18 @@
         </small>
         </div>
       </div>
-      <div class="panel rightpanel">
-        <h3>Create Account</h3>
+      <div class="panel rightpanel loginlftpanel">
+        <h3>Login to your Account</h3>
         <form action="#" method="POST">
-          <label for="username">USERNAME</label>
-          <input required type="text" name="username" id="username" placeholder="username">
+
           <label for="username">EMAIL ADDRESS</label>
-          <input required type="email" name="email" id="email" placeholder="email address">
+          <input required type="email" name="email" id="email" placeholder="Please enter your email address">
           <label for="username">PASSWORD</label>
-          <input required type="password" name="password" id="password" placeholder="password">
-          <label for="username">PASSWORD CONFIRMATION</label>
-          <input required type="password" name="passwordconfirmation" id="passwordconfirmation" placeholder="password confirmation">
+          <input required type="password" name="password" id="password" placeholder="Please enter your password">
           <br><br>
-          <input required type="submit" value="Create Account">
+          <input required type="submit" value="Login">
         </form><br>
-        <a href="login.html"><small>Already have an Account? Login</small></a>
+        <a href="signup.html"><small>Don't have an account? Signup</small></a>
       </div>
 
     </div>
