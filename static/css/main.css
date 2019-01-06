@@ -221,3 +221,142 @@ small{
 	display: none;
 }
 /* RESET PASSWORD PAGE */
+
+/* CREATE MEETUP PAGE */
+.crtmetpbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 25%;
+	background-position: top;
+	padding: 0;
+	margin: 0;
+	display: block;
+	height: auto;
+}
+
+.crtmeetupcontt{
+	width: 90%;
+	background-color: white;
+	min-height: 86vh;
+	margin: 0 auto;
+	padding: 20px;
+
+}
+.navbarmeetcrt{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	border: 1px solid black;
+	display: block;
+}
+
+.crtmetover{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	500px;
+
+}
+
+.navmeetup{
+	width: 100%;
+	background-color: black;
+	height: 40px;
+	padding: 5px 0;
+}
+
+.navlogo{
+	height: 50px;
+	margin-left: 1%;
+	position: absolute;
+	top: -1px;
+}
+
+.navmeetup li{
+	display: inline;
+	float: right;
+	margin-right: 4%;
+	position: relative;
+	top: -12px;
+	text-transform: capitalize;
+	color: white;
+	border: 1px solid white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+}
+li.logoutnav{
+	/* display: none; */
+}
+
+li.userbtnscrtmet{
+	display: none;
+}
+
+.accountbtnsadmin{
+
+}
+p.admnsalut{
+	color: white;
+	float: right;
+	margin-right: 4%;
+	font-size: 14px;
+	position: relative;
+	top: -16px;
+}
+
+.navmeetup li:hover{
+	color: black;
+	border: 1px solid white;
+	background-color: white;
+	cursor: pointer;
+}
+.crtmeoverlay{
+	width: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	/* height: auto; */
+}
+
+.crtmeetupcontt h3{
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-bottom: 20px;
+}
+.footergnr{
+	width: 100%;
+	height: 20px;
+	background-color: black;
+	color: white;
+}
+.footergnr h4{
+	text-align: center;
+	padding: 10px;
+}
+.crtmeetupcontt input[type="text"], .crtmeetupcontt textarea{
+	display: block;
+	padding: 10px;
+	margin-bottom: 20px;
+	width: 90%;
+	border: 2px solid #8100FF;
+}
+.crtmeetupcontt input[type="submit"]{
+	width: 90%;
+	padding: 10px;
+	background-color: #8100FF;
+	border:2px solid white;
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+.crtmeetupcontt form input[type="submit"]:hover{
+	background-color: white;
+	border:2px solid #8100FF;
+	border-radius: 2px;
+	color: #8100FF;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/* CREATE MEETUP PAGE */
