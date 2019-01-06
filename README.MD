@@ -8,6 +8,8 @@ Questioner is a web app that enables users to create meetups and post questions 
  4. User can reset password
  5. User can set new password
  6. User can create a new meetup (title + details + tags + images)
+ 7. Admin can edit a meetup.
+ 
 
 ## Getting Started
 
