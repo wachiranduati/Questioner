@@ -172,10 +172,35 @@ small{
 }
 .admnrghtpanel form{
 	background-color: rgba(249, 249, 249, 0.79);
-	padding: 10px 0 10px 0;
+	padding: 10px 0 25px 0;
 }
 .admnrghtpanel form label{
 	font-weight: 900;
 }
 
+.admnrghtpanel a {
+	margin-top: 5px;
+}
+
 /* ADMIN LOGIN PAGE */
+
+/* RESET PASSWORD PAGE */
+.restpassdpanel form{
+	padding: 0 0 50px 0;
+	margin-bottom: 0;
+}
+.resetpssdbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+.restpassdpanel h3{
+	color: black;
+	box-shadow: inset -4px 0px 0 black;
+	background-color: white;
+}
+
+.restpassdpanel p{
+	text-align: center;
+	font-size: 14px;
+}
