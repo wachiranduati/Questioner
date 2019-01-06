@@ -374,3 +374,30 @@ p.admnsalut{
 	height: 150px;
 }
 /* EDIT MEETUP PAGE */
+
+/* INDEX PAGE */
+.indexbody{
+	padding: 0;
+	margin: 0;
+}
+.indexnavbar{
+	width: 100%;
+	background-color: black;
+}
+li.indxuserbtnsscrtmet{
+	display: inline;
+}
+.indexnavbar .logoutnav, .indexnavbar .admnsalut{
+	display: none;
+}
+.indexbanner{
+	background-image: url('../images/meetup.jpg');
+	background-size: 100%;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	height: 40vh;
+}
+
+/* INDEX PAGE */
