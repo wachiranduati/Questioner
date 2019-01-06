@@ -360,3 +360,17 @@ p.admnsalut{
 	text-transform: uppercase;
 }
 /* CREATE MEETUP PAGE */
+/* EDIT MEETUP PAGE */
+.previewwell{
+	font-size: 12px;
+	padding: 4px 10px;
+	margin-left: 5%;
+	background-color: rgb(201, 201, 201);
+	width: 80%;
+	border-left: 2px solid red;
+	color: rgb(70, 70, 70);
+}
+.previewwell img{
+	height: 150px;
+}
+/* EDIT MEETUP PAGE */
