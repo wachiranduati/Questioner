@@ -603,5 +603,9 @@ li.indxuserbtnsscrtmet{
 	background-color: blue;
 	text-decoration: none;
 }
+.adminMeetupbuttons .btndanger{
+	background-color: red;
+	border: 1px solid red;
+}
 
 /* VIEW MEETUP PAGE */
