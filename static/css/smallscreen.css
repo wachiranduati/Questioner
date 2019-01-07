@@ -547,6 +547,37 @@ li.indxuserbtnsscrtmet{
 	text-align: left;
 }
 .viewingmeetup{
-	display: none;
+	/* display: none; */
+}
+
+.questionmeetup{
+	width: 100%;
+	padding-left: 30px;
+}
+.qustnstitlemeetupbox{
+	text-align: center;
+	text-transform: uppercase;
+}
+.qstnactualexceprt{
+	background-color:gainboro;
+}
+.questionslist{
+	width: 92%;
+}
+.questionslist li{
+	margin-bottom: 2%;
+}
+
+.vmeetupaskqstncontainer{
+	padding: 20px;
+}
+.vmeetupaskqstncontainer textarea, .vmeetupaskqstncontainer input{
+	width: 95%;
+	margin-bottom: 2%;
+	border: 2px solid #8100FF;
+}
+
+.vmeetupaskqstncontainer input{
+	padding: 10px;
 }
 /* VIEW MEETUP PAGE */
