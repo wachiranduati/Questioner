@@ -357,3 +357,97 @@ p.admnsalut{
 	height: 150px;
 }
 /* EDIT MEETUP PAGE */
+
+/* INDEX PAGE */
+.indexbody{
+	padding: 0;
+	margin: 0;
+}
+.indexnavbar{
+	width: 100%;
+	background-color: black;
+}
+li.indxuserbtnsscrtmet{
+	display: inline;
+}
+.indexnavbar .logoutnav, .indexnavbar .admnsalut{
+	display: none;
+}
+.indexbanner{
+	background-image: url('../images/meetup.jpg');
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 300px;
+}
+.banneroverlay{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(212, 51, 200, 0.7);
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	border-bottom: 2px solid #8100FF;
+}
+.banneroverlay h3, .banneroverlay p{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 24px;
+	text-transform: capitalize;
+	position: relative;
+	top: 70px;
+
+}
+.banneroverlay p{
+	font-size: 16px;
+	margin-top: 20px;
+}
+.meetupscontainer{
+	display: flex;
+	padding: 10px 20px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.meetupscontainer .meetup{
+	flex: 1 1 0;
+	min-width: 300px;
+	margin-right: 2$;
+	max-width: 200px;
+	margin-bottom: 1%;
+	height: 370px;
+	box-shadow: 0 0 4px black;
+}
+.meetupbackdrp{
+	background-image: url('../images/meetup.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 58%;
+}
+.meetupcontent{
+	padding: 2px;
+}
+.meetupcontent h5{
+	margin: 2px 4px;
+	text-align: center;
+	text-transform: capitalize;
+}
+.meetupcontent p{
+	font-size: 12px;
+	text-align: center;
+	color: rgba(112, 116, 112, 0.94);
+	font-weight: lighter;
+}
+.meetupreadmore a{
+	text-decoration: none;
+	color: #8100FF;
+	text-transform: uppercase;
+	margin-left: 29%;
+}
+
+.indxfooter{
+ background-color: black;
+ color: white;
+ padding: 10px 0;
+ text-align: center;;
+}
+
+/* INDEX PAGE */
