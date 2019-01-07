@@ -614,3 +614,13 @@ li.indxuserbtnsscrtmet{
 }
 
 /* VIEW MEETUP PAGE */
+
+
+/* VIEW QUESTION PAGE */
+.qstrplies li{
+	padding: 10px;
+	border: 1px solid black;
+	list-style: none;
+	margin-bottom: 10px;
+}
+/* VIEW QUESTION PAGE */
