@@ -617,5 +617,9 @@ li.indxuserbtnsscrtmet{
 	box-sizing: border-box;
 	padding: 10px;
 }
+.actualquestionsbox button{
+	text-decoration: none;
+	color: #8100FF;
+}
 
 /* VIEW MEETUP PAGE */
