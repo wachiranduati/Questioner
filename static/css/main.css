@@ -596,4 +596,16 @@ li.indxuserbtnsscrtmet{
 	padding: 10px;
 }
 
+.adminMeetupbuttons{
+	margin: 10px auto;
+}
+
+.adminMeetupbuttons a{
+	padding: 20px;
+	border: 1px solid blue;
+	color: white;
+	background-color: blue;
+	text-decoration: none;
+}
+
 /* VIEW MEETUP PAGE */
