@@ -566,4 +566,22 @@ li.indxuserbtnsscrtmet{
 	font-size: 16px;
 	text-align: left;
 }
+.questionmeetup{
+	width: 100%;
+	padding-left: 30px;
+}
+.qustnstitlemeetupbox{
+	text-align: center;
+	text-transform: uppercase;
+}
+.qstnactualexceprt{
+	background-color:gainboro;
+}
+.questionslist{
+	width: 92%;
+}
+.questionslist li{
+	margin-bottom: 2%;
+}
+
 /* VIEW MEETUP PAGE */
