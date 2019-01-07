@@ -475,7 +475,8 @@ li.indxuserbtnsscrtmet{
 	background-color: white;
 	width: 60%;
 	margin: 0 auto;
-	height: 90vh;
+	min-height: 90vh;
+	height: auto;
 }
 .overlder{
 	width: 100%;
@@ -521,5 +522,20 @@ li.indxuserbtnsscrtmet{
 	padding: 0;
 	margin: 0;
 	color: rgba(40, 40, 40, 0.65);
+}
+.upcomingmeetupsprof h3{
+	text-align: center;
+}
+.upcomingmeetupsprof{
+	height: 500px;
+	width: 100%;
+	background-color: gainsboro;
+	padding-top: 10px;
+}
+.meetupqustns li{
+	margin: 3px auto;
+}
+.meetupqustns li a{
+	text-decoration: none;
 }
 /* ACCOUNT PROFILE PAGE */
