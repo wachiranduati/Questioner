@@ -612,4 +612,14 @@ li.indxuserbtnsscrtmet{
 	border: 1px solid red;
 }
 
+.questionslist li{
+	border: 1px solid black;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.actualquestionsbox button{
+	text-decoration: none;
+	color: #8100FF;
+}
+
 /* VIEW MEETUP PAGE */
