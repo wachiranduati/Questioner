@@ -492,6 +492,20 @@ li.indxuserbtnsscrtmet{
 	margin: 0 auto;
 	border-bottom: 1px solid gainsboro;
 }
+.qsntsposted{
+	width: 45%;
+	margin-top: 20px;
+	display: inline-block;
+}
+.qsntsposted .qstnpstchld{
+	width: 100%;
+	height: 40px;
+}
+.qstnpstchld h4{
+	margin: 1% 0;
+	padding: 2px 0;
+}
+
 .qstnchldtitle{
 	padding: 0;
 	margin: 0;
