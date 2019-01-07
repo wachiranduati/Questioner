@@ -578,4 +578,17 @@ li.indxuserbtnsscrtmet{
 .questionslist li{
 	margin-bottom: 2%;
 }
+
+.vmeetupaskqstncontainer{
+	padding: 20px;
+}
+.vmeetupaskqstncontainer textarea, .vmeetupaskqstncontainer input{
+	width: 90%;
+	margin-bottom: 2%;
+	border: 2px solid #8100FF;
+}
+
+.vmeetupaskqstncontainer input{
+	padding: 10px;
+}
 /* VIEW MEETUP PAGE */
