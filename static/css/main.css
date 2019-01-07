@@ -631,4 +631,23 @@ li.indxuserbtnsscrtmet{
 	list-style: none;
 	margin-bottom: 10px;
 }
+.voteqstnbtns{
+	margin-top: 2%;
+	margin-bottom: 3%;
+}
+.voteqstnbtns a{
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+	margin-left: 10%;
+}
+.voteqstnbtns .btnsucc{
+	color: white;
+	background: blue;
+}
+.voteqstnbtns .btndanger{
+	color: white;
+	background: red;
+}
+
 /* VIEW QUESTION PAGE */

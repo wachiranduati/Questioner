@@ -17,7 +17,7 @@ Questioner is a web app that enables users to create meetups and post questions 
  13. signed in User can post a question.
  14. Admin user can delete meetup
  15. User can view meetup questions ordered according to their priority.
-
+16. User can view specific meetup questions and their comments.
 ## Getting Started
 
 ## Installation
