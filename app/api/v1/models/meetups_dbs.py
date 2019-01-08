@@ -6,7 +6,8 @@ meetups = [
 "images" : ["https://farmlands.io", "https://unsplash.com/21"],
 "topic" : "Swimming up the gulf sea",
 "happeningOn" : "2-03-2013",
-"Tags" : ["bike", "bonding", "cheki maneno"]
+"Tags" : ["bike", "bonding", "cheki maneno"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
 },
 {
 "id" : 2,
@@ -15,7 +16,8 @@ meetups = [
 "images" : ["https://graceland.io", "https://whatelse.io"],
 "topic" : "Freedom scavenging",
 "happeningOn" : "10-12-2010",
-"Tags" : ["bike", "bonding", "cheki maneno"]
+"Tags" : ["bike", "bonding", "cheki maneno"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
 }
 ,
 {
@@ -25,7 +27,8 @@ meetups = [
 "images" : ["https://mumathai.io", "https://thegoings.io"],
 "topic" : "The only grace",
 "happeningOn" : "01-23-2012",
-"Tags" : ["bike", "bonding", "cheki maneno"]
+"Tags" : ["bike", "bonding", "cheki maneno"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
 }
 ,{
 "id" : 4,
@@ -34,7 +37,8 @@ meetups = [
 "images" : ["https://mukindorio.io", "https://imeweseko.io"],
 "topic" : "Coffe and lunch",
 "happeningOn" : "02-21-2018",
-"Tags" : ["bike", "bonding", "cheki maneno"]
+"Tags" : ["bike", "bonding", "cheki maneno"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
 }
 ]
 
