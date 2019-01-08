@@ -33,5 +33,6 @@ class TestAdminEndpoints(unittest.TestCase):
 			data=json.dumps(incomplete_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
 
+
 	def tearDown(self):
 		self.app = None

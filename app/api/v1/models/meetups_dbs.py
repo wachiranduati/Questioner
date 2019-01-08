@@ -11,7 +11,7 @@ meetups = [
 },
 {
 "id" : 2,
-"createdOn" : "12-03-2009",
+"createdOn" : "2019-01-09 00:00:53",
 "location" : "Kangundo",
 "images" : ["https://graceland.io", "https://whatelse.io"],
 "topic" : "Freedom scavenging",
@@ -22,7 +22,7 @@ meetups = [
 ,
 {
 "id" : 3,
-"createdOn" : "11-20-2010",
+"createdOn" : "11-20-2010 10:00:53",
 "location" : "Kangundo",
 "images" : ["https://mumathai.io", "https://thegoings.io"],
 "topic" : "The only grace",
@@ -32,7 +32,7 @@ meetups = [
 }
 ,{
 "id" : 4,
-"createdOn" : "15-23-2017",
+"createdOn" : "15-23-2017 02:00:53",
 "location" : "Kangundo",
 "images" : ["https://mukindorio.io", "https://imeweseko.io"],
 "topic" : "Coffe and lunch",
@@ -43,26 +43,21 @@ meetups = [
 ]
 
 payload = {
-"id" : 2,
-"createdOn" : "12-23-2019",
 "location" : "Kangundo",
 "images" : ["https://placeholder.io", "https://placeingine.io"],
 "topic" : "Biking to MT longonot",
 "happeningOn" : "12-23-2019",
-"Tags" : ["bike", "bonding", "cheki maneno"]
+"Tags" : ["bike", "bonding", "cheki maneno"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
 }
 
 incomplete_payload = {
-"id" : 2,
-"createdOn" : "12-23-2019",
 "location" : "Kangundo",
 "images" : ["https://placeholder.io", "https://placeingine.io"],
 "topic" : "Biking to MT longonot",
 }
 
 longer_payload = {
-"id" : 2,
-"createdOn" : "12-23-2019",
 "location" : "Kangundo",
 "images" : ["https://placeholder.io", "https://placeingine.io"],
 "topic" : "Biking to MT longonot",
