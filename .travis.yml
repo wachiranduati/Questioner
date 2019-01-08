@@ -1,15 +1,11 @@
 language: python
 python:
-  - 3.6
+  - "3.6"
 install:
-  - pip install -r requirements.txt
-  - pip install coveralls
+  - pip3 install -r requirements.txt
+  - pip3 install coveralls
 script:
   - pytest --cov app/tests/v1
 
 after_success:
   - coveralls
-
-branches:
-  only:
-  - develop
