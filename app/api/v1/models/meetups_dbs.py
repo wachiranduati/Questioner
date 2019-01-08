@@ -37,3 +37,31 @@ meetups = [
 "Tags" : ["bike", "bonding", "cheki maneno"]
 }
 ]
+
+payload = {
+"id" : 2,
+"createdOn" : "12-23-2019",
+"location" : "Kangundo",
+"images" : ["https://placeholder.io", "https://placeingine.io"],
+"topic" : "Biking to MT longonot",
+"happeningOn" : "12-23-2019",
+"Tags" : ["bike", "bonding", "cheki maneno"]
+}
+
+incomplete_payload = {
+"id" : 2,
+"createdOn" : "12-23-2019",
+"location" : "Kangundo",
+"images" : ["https://placeholder.io", "https://placeingine.io"],
+"topic" : "Biking to MT longonot",
+}
+
+longer_payload = {
+"id" : 2,
+"createdOn" : "12-23-2019",
+"location" : "Kangundo",
+"images" : ["https://placeholder.io", "https://placeingine.io"],
+"topic" : "Biking to MT longonot",
+"geo" : ["https://placeholder.io", "https://placeingine.io"],
+"weather" : "Biking to MT longonot",
+}
