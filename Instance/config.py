@@ -1,13 +1,15 @@
 """ Flask configurations """
 
 import os
+import secrets
 
 
 class Config(object):
     """Parent configuration class."""
     DEBUG = False
     TESTING = False
-    SECRET = os.getenv('SECRET')
+    # SECRET = os.getenv('SECRET')
+    SECRET = secrets.token_hex(16) 
 
 
 class DevelopmentConfig(Config):
