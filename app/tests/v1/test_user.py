@@ -1,6 +1,8 @@
 import unittest
 from app import create_app
 from flask import jsonify, json
+from app.api.v1.models.meetups_dbs import question_payload
+
 
 class TestUserEndpoints(unittest.TestCase):
 	def setUp(self):
@@ -24,7 +26,9 @@ class TestUserEndpoints(unittest.TestCase):
 		self.assertEqual(self.response_message.status_code, 400)
 
 	def test_userpostquestion_success(self):
-		self.assertEqual(2,34)
+		self.response_message = self.client.post('/api/v1/questions',
+			data=json.dumps(question_payload), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 201)
 
 
 
