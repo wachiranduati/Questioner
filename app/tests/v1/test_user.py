@@ -33,9 +33,19 @@ class TestUserEndpoints(unittest.TestCase):
 			data=json.dumps(question_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 201)
 
-	def test_createmeetup_nodata(self):
-		self.response_message = self.client.post('api/v1/meetups',
+	def test_userpostquestion_nodata(self):
+		self.response_message = self.client.post('/api/v1/questions',
 			data=json.dumps(''), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
+
+	def test_userpostquestion_incompletedata(self):
+		self.response_message = self.client.post('/api/v1/questions',
+			data=json.dumps(shorter_question_payload), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
+
+	def test_userpostquestion_moredata(self):
+		self.response_message = self.client.post('/api/v1/questions',
+			data=json.dumps(longer_question_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
 
 
