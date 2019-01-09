@@ -11,6 +11,9 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.get('/api/v1/meetups/upcoming')
 		self.assertEqual(self.response_message.status_code, 200)
 
+	def test_getspecificmeetup(self):
+		assertEqual(2,34)
+
 
 	def tearDown(self):
 		self.app = None
