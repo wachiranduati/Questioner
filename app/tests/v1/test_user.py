@@ -33,6 +33,11 @@ class TestUserEndpoints(unittest.TestCase):
 			data=json.dumps(question_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 201)
 
+	def test_createmeetup_nodata(self):
+		self.response_message = self.client.post('api/v1/meetups',
+			data=json.dumps(''), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
+
 
 
 
