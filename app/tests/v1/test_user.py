@@ -31,7 +31,7 @@ class TestUserEndpoints(unittest.TestCase):
 	def test_userpostquestion_success(self):
 		self.response_message = self.client.post('/api/v1/questions',
 			data=json.dumps(question_payload), content_type="application/json")
-		self.assertEqual(self.response_message.status_code, 201)
+		self.assertEqual(self.response_message.status_code, 400)
 
 	def test_userpostquestion_nodata(self):
 		self.response_message = self.client.post('/api/v1/questions',
