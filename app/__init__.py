@@ -10,6 +10,8 @@ def create_app(config_name):
 	api = Api(app)
 
 	from app.api.v1.views.Admin_Views import admin
+	from app.api.v1.views.user_views import users
 	app.register_blueprint(admin)
+	app.register_blueprint(users)
 
 	return app
