@@ -7,8 +7,9 @@ class TestUserEndpoints(unittest.TestCase):
 		self.app = create_app("testing")
 		self.client = self.app.test_client()
 
-	def test_getall(self):
-		assertEqual(2,4)
+	def test_getallmeetups(self):
+		self.response_message = self.client.get('/api/v1/meetups/upcoming')
+		self.assertEqual(self.response_message.status_code, 200)
 
 
 	def tearDown(self):
