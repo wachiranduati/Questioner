@@ -12,4 +12,6 @@ apius = Api(users)
 @apius.route('/api/v1/meetups/upcoming')
 class getall(Resource):
 	def get(self):
-		return meetups
+		return {"status":200,
+				"data":meetups
+				}, 200
