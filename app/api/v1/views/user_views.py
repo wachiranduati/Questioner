@@ -15,3 +15,12 @@ class getall(Resource):
 		return {"status":200,
 				"data":meetups
 				}, 200
+
+@UserApi.route('/api/v1/meetups/<int:id>')
+class getspecific(Resource):
+	def get(self,id):
+		for meet_up in meetups:
+			if meet_up['id'] == id:
+				return {"status":200,
+					 "data": [meet_up]
+					 }, 200
