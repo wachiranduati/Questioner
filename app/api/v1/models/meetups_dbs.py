@@ -54,7 +54,7 @@ payload = {
 incomplete_payload = {
 "location" : "Kangundo",
 "images" : ["https://placeholder.io", "https://placeingine.io"],
-"topic" : "Biking to MT longonot",
+"topic" : "Biking to MT longonot"
 }
 
 longer_payload = {
@@ -62,5 +62,6 @@ longer_payload = {
 "images" : ["https://placeholder.io", "https://placeingine.io"],
 "topic" : "Biking to MT longonot",
 "geo" : ["https://placeholder.io", "https://placeingine.io"],
-"weather" : "Biking to MT longonot",
+"weather" : "Biking to MT longonot"
 }
+

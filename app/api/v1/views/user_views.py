@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from flask_restplus import Resource, Api
 from app.api.v1.models.meetups_dbs import meetups
+
 from datetime import datetime
 
 
@@ -9,6 +10,6 @@ apius = Api(users)
 
 
 @apius.route('/api/v1/meetups/upcoming')
-class meetups(Resource):
+class getall(Resource):
 	def get(self):
-		return {'meetups':'upcoming'}
+		return meetups
