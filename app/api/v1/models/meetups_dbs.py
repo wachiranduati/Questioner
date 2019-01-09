@@ -110,4 +110,4 @@ class DataStructureDatabase():
 		return self.longer_question_payload
 
 	def shorter_question_payload(self):
-		self.shorter_question_payload
+		return self.shorter_question_payload
