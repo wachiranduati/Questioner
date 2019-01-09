@@ -23,7 +23,7 @@ class HelloWorld(Resource):
 					"status" : 400,
 					"error" : "Your request contains more input that is required"
 					}, 400
-			elif len(MeetupData) == 6:
+			else:
 				MeetupData['createOn'] = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 				MeetupData['id'] = int(meetups[-1]['id'] + 1)
 				meetups.append(MeetupData)
