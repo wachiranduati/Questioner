@@ -2,6 +2,9 @@ import unittest
 from app import create_app
 from flask import jsonify, json
 from app.api.v1.models.meetups_dbs import question_payload
+from app.api.v1.models.meetups_dbs import longer_question_payload
+from app.api.v1.models.meetups_dbs import shorter_question_payload
+
 
 
 class TestUserEndpoints(unittest.TestCase):

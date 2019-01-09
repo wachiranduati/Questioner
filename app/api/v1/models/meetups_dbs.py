@@ -118,3 +118,17 @@ question_payload = {
 "body" : "is it true that Idris Elba has been baiting people into believing he's the next James Bond?",
 "votes" : 9
 }
+
+longer_question_payload = {
+"meetup" : 19,
+"title" : "Who is the next James Bond?",
+"body" : "is it true that Idris Elba has been baiting people into believing he's the next James Bond?",
+"votes" : 9,
+"name": "Jamusi Kantasai",
+"Age": 23
+}
+
+shorter_question_payload = {
+"meetup" : 19,
+"title" : "Who is the next James Bond?"
+}
