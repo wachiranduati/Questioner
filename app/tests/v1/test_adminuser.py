@@ -32,6 +32,9 @@ class TestAdminEndpoints(unittest.TestCase):
 			data=json.dumps(DataStrctPayloads.meetup_longer_payload()), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
 
+	def test_upvotequestion(self):
+		
+
 
 	def tearDown(self):
 		self.app = None
