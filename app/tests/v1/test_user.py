@@ -73,6 +73,9 @@ class TestUserEndpoints(unittest.TestCase):
 		self.assertEqual(self.response_message.status_code, 404)
 
 	def test_rsvpMeetupCreate(self):
+		self.response_message = self.client.put('/api/v1/meetups/1/rsvps')
+		self.assertEqual(self.response_message.status_code, 405)
+		#yet another bug found here
 
 
 	
