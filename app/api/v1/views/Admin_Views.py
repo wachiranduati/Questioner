@@ -1,32 +1,21 @@
 from flask import Blueprint, request
 from flask_restplus import Resource, Api
-from app.api.v1.models.meetups_dbs import meetups
-from datetime import datetime
+from app.api.v1.models.meetupscontroller import MeetUpController
 
 
 admin = Blueprint('api', __name__)
 api = Api(admin)
 
+meetupcntrl = MeetUpController()
+
 
 @api.route('/api/v1/meetups')
-class HelloWorld(Resource):
+class AdminCreateMeetup(Resource):
 	def post(self):
 		MeetupData = request.get_json()
-		if MeetupData != None:
-			if len(MeetupData) < 6:
-				return {
-					"status" : 400,
-					"error" : "Please ensure that you provide all the required fields"
-					}, 400
-			elif len(MeetupData) > 6:
-				return {
-					"status" : 400,
-					"error" : "Your request contains more input that is required"
-					}, 400
-			else:
-				MeetupData['createOn'] = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-				MeetupData['id'] = int(meetups[-1]['id'] + 1)
-				meetups.append(MeetupData)
+		if MeetupData:
+			PostMeetupState = meetupcntrl.create_meetup(MeetupData)
+			if PostMeetupState == True:
 				return {
 						"status": 201,
 						"data": {
@@ -36,10 +25,14 @@ class HelloWorld(Resource):
 							"tags" : MeetupData['Tags']
 								}
 
-						}, 201	
+						}, 201
+			else:
+				return {
+					"status" : 400,
+					"error" : "Please ensure that you provide all the required fields"
+					}, 400
 		else:
 			return {
-						"status": 400,
-						"data": "The request made was empty"
-
-						}, 400	
+					"status" : 400,
+					"error" : "Please ensure that you provide all the required fields"
+					}, 400

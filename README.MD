@@ -36,4 +36,4 @@ Questioner is a web app that enables users to create meetups and post questions 
 - Python 3.6
 - Flask framework
 
-## Author: Wachira Nduati
+## Author: Nicholas Nduati
