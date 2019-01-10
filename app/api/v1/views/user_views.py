@@ -82,3 +82,20 @@ class SpeficicErrorsForUpvoteFunctionality(Resource):
 				"status" : 400,
 				"error" : "Sorry this route only supports Integers as part of its variable rules"
 				}, 400
+
+@UserApi.route('/api/v1/questions/<int:questionid>/downvote')
+class patchdownvotequestion(Resource):
+	def put(self, questionid):
+		return qstnscntrl.downvoteQuestion(questionid)
+
+
+@UserApi.route('/api/v1/questions/<string:questionid>/downvote')
+@UserApi.route('/api/v1/questions/<float:questionid>/downvote')
+@UserApi.route('/api/v1/questions/<path:questionid>/downvote')
+@UserApi.route('/api/v1/questions/<uuid:questionid>/downvote')
+class SpeficicErrorsForUpvoteFunctionality(Resource):
+	def get(self,id):
+		return {
+				"status" : 400,
+				"error" : "Sorry this route only supports Integers as part of its variable rules"
+				}, 400
