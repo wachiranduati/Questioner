@@ -60,6 +60,8 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.put('/api/v1/questions/1/upvote')
 		self.assertEqual(self.response_message.status_code, 202)
 
+	def test_downvoteFunctionality():
+
 
 	
 	
