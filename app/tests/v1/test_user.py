@@ -72,6 +72,8 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.put('/api/v1/questions/100000/downvote')
 		self.assertEqual(self.response_message.status_code, 404)
 
+	def test_rsvpMeetupCreate(self):
+
 
 	
 	
