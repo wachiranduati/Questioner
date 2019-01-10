@@ -35,16 +35,16 @@ class QuestionsController():
 				return {
 						"status" : 202,
 						"data" : [{
-						"meetup" : self.question['id'],
+						"meetup" : self.question['meetup'],
 						"title" : self.question['title'],
 						"body" : self.question['body'],
-						"votes": Integer
+						"votes": self.question['votes']
 						}]
 						}, 202
 
 		if self.questionfound == False:
 			return {
 					"status" : 404,
-					"error" : "Please ensure that you provide all the required fields"
+					"error" : "sorry but a question with that id does not exist"
 					}, 404 
 

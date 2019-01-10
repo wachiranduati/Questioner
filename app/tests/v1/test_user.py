@@ -49,6 +49,10 @@ class TestUserEndpoints(unittest.TestCase):
 		self.assertEqual(self.response_message.status_code, 400)
 
 	def test_upvotequestion(self):
+		# self.response_message = self.client.put('/api/v1/questions/<int:questionid>/upvote',
+		# 	data=json.dumps(), content_type="application/json")
+		self.response_message = self.client.put('/api/v1/questions/1/upvote')
+		self.assertEqual(self.response_message.status_code, 404)
 	
 
 

@@ -66,7 +66,8 @@ class postquestion(Resource):
 						"data": "The request made was empty"
 
 						},400
-						
-@UserApi.route('/questions/<int:question-id>/upvote')
-class upvotequestion(Resource):
-	def put(self, question-id):
+
+@UserApi.route('/api/v1/questions/<int:questionid>/upvote')
+class patchupvotequestion(Resource):
+	def put(self, questionid):
+		return qstnscntrl.upvoteQuestion(questionid)
