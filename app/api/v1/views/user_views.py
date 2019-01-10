@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from flask_restplus import Resource, Api
 from app.api.v1.models.meetupscontroller import MeetUpController
 from app.api.v1.models.questionscontroller import QuestionsController
+from app.api.v1.models.rsvpcontroller import RsvController
 
 
 from datetime import datetime
@@ -12,6 +13,7 @@ UserApi = Api(users)
 
 meetupcntrl = MeetUpController()
 qstnscntrl = QuestionsController()
+rsvpCntr = RsvController()
 
 
 @UserApi.route('/api/v1/meetups/upcoming')
@@ -99,3 +101,14 @@ class SpeficicErrorsForUpvoteFunctionality(Resource):
 				"status" : 400,
 				"error" : "Sorry this route only supports Integers as part of its variable rules"
 				}, 400
+
+@UserApi.route('/api/v1/meetups/rsvps')
+class ShowallRsvps(Resource):
+	def get(self):
+		return rsvpCntr.showall_rsvps()
+
+@UserApi.route('/api/v1/meetups/<meetupid>/rsvps')
+class createMeetupRsvp(Resource):
+	def post(self, meetupid):
+		reservationMaking = request.get_json()
+		return rsvpCntr.add_rsvp(meetupid,reservationMaking)
