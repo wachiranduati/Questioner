@@ -25,3 +25,26 @@ class QuestionsController():
 		else:
 			return False
 
+	def upvoteQuestion(self, id):
+		""" This method should update the question votes value to + 1"""
+		self.questionfound = False
+		for self.question in Questions:
+			if self.question['id'] == id:
+				self.questionfound = True
+				self.question['votes'] = int(self.question['votes'] + 1)
+				return {
+						"status" : 202,
+						"data" : [{
+						"meetup" : self.question['id'],
+						"title" : self.question['title'],
+						"body" : self.question['body'],
+						"votes": Integer
+						}]
+						}, 202
+
+		if self.questionfound == False:
+			return {
+					"status" : 404,
+					"error" : "Please ensure that you provide all the required fields"
+					}, 404 
+
