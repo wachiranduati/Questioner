@@ -66,3 +66,19 @@ class postquestion(Resource):
 						"data": "The request made was empty"
 
 						},400
+
+@UserApi.route('/api/v1/questions/<int:questionid>/upvote')
+class patchupvotequestion(Resource):
+	def put(self, questionid):
+		return qstnscntrl.upvoteQuestion(questionid)
+
+@UserApi.route('/api/v1/questions/<string:questionid>/upvote')
+@UserApi.route('/api/v1/questions/<float:questionid>/upvote')
+@UserApi.route('/api/v1/questions/<path:questionid>/upvote')
+@UserApi.route('/api/v1/questions/<uuid:questionid>/upvote')
+class SpeficicErrorsForUpvoteFunctionality(Resource):
+	def get(self,id):
+		return {
+				"status" : 400,
+				"error" : "Sorry this route only supports Integers as part of its variable rules"
+				}, 400

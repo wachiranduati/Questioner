@@ -48,7 +48,20 @@ class TestUserEndpoints(unittest.TestCase):
 			data=json.dumps(DataStrctPayloads.longer_question_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
 
-	def test_upvotequestion(self):
+	def test_upvotequestionError(self):
+		"""  database is empty """
+		self.response_message = self.client.put('/api/v1/questions/1/upvote')
+		self.assertEqual(self.response_message.status_code, 404)
+
+	def test_upvotequestionSuccess(self):
+		"""  run after successfully creating a question """
+		self.response_message = self.client.post('/api/v1/questions',
+			data=json.dumps(DataStrctPayloads.questions_payload()), content_type="application/json")
+		self.response_message = self.client.put('/api/v1/questions/1/upvote')
+		self.assertEqual(self.response_message.status_code, 202)
+
+
+	
 	
 
 
