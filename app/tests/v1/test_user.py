@@ -50,7 +50,7 @@ class TestUserEndpoints(unittest.TestCase):
 
 	def test_upvotequestionError(self):
 		"""  database is empty """
-		self.response_message = self.client.put('/api/v1/questions/1/upvote')
+		self.response_message = self.client.put('/api/v1/questions/100000/upvote')
 		self.assertEqual(self.response_message.status_code, 404)
 
 	def test_upvotequestionSuccess(self):
@@ -60,7 +60,17 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.put('/api/v1/questions/1/upvote')
 		self.assertEqual(self.response_message.status_code, 202)
 
-	def test_downvoteFunctionality():
+	def test_downvoteFunctionality(self):
+		"""  run after successfully creating a question """
+		self.response_message = self.client.post('/api/v1/questions',
+			data=json.dumps(DataStrctPayloads.questions_payload()), content_type="application/json")
+		self.response_message = self.client.put('/api/v1/questions/1/downvote')
+		self.assertEqual(self.response_message.status_code, 202)
+
+	def test_downvotequestionError(self):
+		"""  database is empty """
+		self.response_message = self.client.put('/api/v1/questions/100000/downvote')
+		self.assertEqual(self.response_message.status_code, 404)
 
 
 	

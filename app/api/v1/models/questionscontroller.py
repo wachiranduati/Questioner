@@ -48,3 +48,27 @@ class QuestionsController():
 					"error" : "sorry but a question with that id does not exist"
 					}, 404 
 
+	def downvoteQuestion(self, id):
+		""" This method should update the question votes value to + 1"""
+		self.questionfound = False
+		for self.question in Questions:
+			if self.question['id'] == id:
+				self.questionfound = True
+				self.question['votes'] = int(self.question['votes'] - 1)
+				#decided to leave it as such now someone can have a negative vote too yes
+				return {
+						"status" : 202,
+						"data" : [{
+						"meetup" : self.question['meetup'],
+						"title" : self.question['title'],
+						"body" : self.question['body'],
+						"votes": self.question['votes']
+						}]
+						}, 202
+
+		if self.questionfound == False:
+			return {
+					"status" : 404,
+					"error" : "sorry but a question with that id does not exist"
+					}, 404 
+
