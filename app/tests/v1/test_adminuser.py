@@ -31,8 +31,6 @@ class TestAdminEndpoints(unittest.TestCase):
 		self.response_message = self.client.post('api/v1/meetups',
 			data=json.dumps(DataStrctPayloads.meetup_longer_payload()), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
-
-	def test_upvotequestion(self):
 		
 
 

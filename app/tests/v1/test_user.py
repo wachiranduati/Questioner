@@ -48,6 +48,9 @@ class TestUserEndpoints(unittest.TestCase):
 			data=json.dumps(DataStrctPayloads.longer_question_payload), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
 
+	def test_upvotequestion(self):
+	
+
 
 
 
