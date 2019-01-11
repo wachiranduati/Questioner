@@ -1,3 +1,7 @@
+from .meetupscontroller import MeetUpController
+
+meetupCntrl = MeetUpController()
+
 rsrpReservations = []
 class RsvController():
 	def __init__(self):
@@ -11,12 +15,21 @@ class RsvController():
 
 	def add_rsvp(self, id, data):
 		#check whether id exists
-		#check whether such a rsvp exists - bug stories
-		# we havent looked for the meetup via its id....hardcode it
-		self.id = 1
-		for rqField in self.required_fields:
-			if rqField not in data:
-				self.all_required_fields = False
+		self.exists = False
+		for rsvpMeetup in rsrpReservations:
+			if rsvpMeetup['user'] == self.user and rsvpMeetup['meetup'] == id:
+				self.exists = True
+				break
+
+		if self.exists == True:
+			return {
+					"status" : 409,
+					"error" : "Reservation already exists on said Meetup"
+					}, 409
+		else:
+			for rqField in self.required_fields:
+				if rqField not in data:
+					self.all_required_fields = False
 
 		if self.all_required_fields == True:
 			#check whether expected responses are found
@@ -25,18 +38,26 @@ class RsvController():
 					self.response_found = True
 
 			if self.response_found == True:
-				#another bug this is not a composite value
-				data['id'] = (self.user, data['meetup'])
+				# data['id'] = int(rsrpReservations[-1]['id'] + 1)
+				data['id'] = int(len(rsrpReservations) + 1)
 				data['user'] = self.user
-				rsrpReservations.append(data)
-				#another bug havent retrieved the topic from meetups
-				return {
-						"status" : 201,
-						"data" : [{
-						"meetup" : data['meetup'],
-						"topic" : String,
-						"status": data['response']
-						}]}
+				meetup = meetupCntrl.getbyid_meetup(id)
+				if meetup != False:
+					data['topic'] = meetup['topic']
+					data['meetup'] = id
+					rsrpReservations.append(data)
+					return {
+							"status" : 201,
+							"data" : [{
+							"meetup" : id,
+							"topic" : data['topic'],
+							"status": data['response']
+							}]}, 201
+				else:
+					return {
+					"status" : 400,
+					"error" : "Meetup with that id does not exist"
+					}, 400
 
 				
 
