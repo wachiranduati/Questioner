@@ -107,8 +107,14 @@ class ShowallRsvps(Resource):
 	def get(self):
 		return rsvpCntr.showall_rsvps()
 
-@UserApi.route('/api/v1/meetups/<meetupid>/rsvps')
+@UserApi.route('/api/v1/meetups/<int:meetupid>/rsvps')
 class createMeetupRsvp(Resource):
 	def post(self, meetupid):
 		reservationMaking = request.get_json()
-		return rsvpCntr.add_rsvp(meetupid,reservationMaking)
+		if reservationMaking:
+			return rsvpCntr.add_rsvp(meetupid,reservationMaking)
+		else:
+			return {
+				"status" : 400,
+				"error" : "You did not provide any input"
+				}, 400
