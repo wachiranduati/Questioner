@@ -45,6 +45,11 @@ class DataStructureDatabase():
 		"title" : "Who is the next James Bond?"
 		}
 
+		self.properrsvp_payload = {
+									"meetup" : 1,
+									"response" : "yes"
+									}
+
 	def meetuppayload(self):
 		return self.payload
 
@@ -65,3 +70,6 @@ class DataStructureDatabase():
 
 	def shorter_question_payload(self):
 		return self.shorter_question_payload
+
+	def rvsp_payload(self):
+		return self.properrsvp_payload

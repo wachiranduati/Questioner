@@ -45,4 +45,16 @@ class MeetUpController():
 			return {"status":200,
 				"data": meetups
 				}, 200
+
+	def getbyid_meetup(self, id):
+		self.found = False
+		for self.meetup in meetups:
+			if self.meetup['id'] == id:
+				self.found = True
+				return self.meetup
+
+		if self.found == False:
+			return False
+
+
 		

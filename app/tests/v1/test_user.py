@@ -73,15 +73,18 @@ class TestUserEndpoints(unittest.TestCase):
 		self.assertEqual(self.response_message.status_code, 404)
 
 	def test_rsvpMeetupCreate(self):
-		self.response_message = self.client.put('/api/v1/meetups/1/rsvps')
-		self.assertEqual(self.response_message.status_code, 405)
-		#yet another bug found here
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
 
+	def test_rsvpMeetupRetriveAll(self):
+		self.response_message = self.client.get('/api/v1/meetups/rsvps')
+		self.assertEqual(self.response_message.status_code, 200)
 
-	
-	
-
-
+	def test_rsvpMeetupSendempty(self):
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(''), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
 
 
 	def tearDown(self):
