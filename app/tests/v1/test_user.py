@@ -72,10 +72,6 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.put('/api/v1/questions/100000/downvote')
 		self.assertEqual(self.response_message.status_code, 404)
 
-	def test_rsvpMeetupCreate(self):
-		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
-			data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
-		self.assertEqual(self.response_message.status_code, 400)
 
 	def test_rsvpMeetupRetriveAll(self):
 		self.response_message = self.client.get('/api/v1/meetups/rsvps')
@@ -85,6 +81,30 @@ class TestUserEndpoints(unittest.TestCase):
 		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
 			data=json.dumps(''), content_type="application/json")
 		self.assertEqual(self.response_message.status_code, 400)
+
+	def test_RsvpSuccessCreateEmpty(self):
+		"""  run after successfully creating a meetup """
+		self.response_message = self.client.post('/api/v1/meetups',
+			data=json.dumps(DataStrctPayloads.meetuppayload()), content_type="application/json")
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(''), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 400)
+
+	def test_RsvpCreateGoodRequest(self):
+		"""  run after successfully creating a meetup """
+		self.response_message = self.client.post('/api/v1/meetups',
+			data=json.dumps(DataStrctPayloads.meetuppayload()), content_type="application/json")
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 201)
+
+	def test_RsvpMultipleCreate(self):
+		"""  Try to create multiple reservations on the same meetup with the same user id """
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
+		self.response_message = self.client.post('/api/v1/meetups/1/rsvps',
+			data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
+		self.assertEqual(self.response_message.status_code, 409)
 
 
 	def tearDown(self):
