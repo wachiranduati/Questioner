@@ -59,7 +59,7 @@ class postquestion(Resource):
 			else:
 				return {
 						"status": 400,
-						"data": "The request made incomplete"
+						"data": "The request made is incomplete"
 
 						}, 400
 		else:
