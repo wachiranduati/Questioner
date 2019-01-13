@@ -25,14 +25,14 @@ class DataStructureDatabase():
 
 		
 		self.question_payload = {
-								"meetup" : 19,
+								"meetup" : 1,
 								"title" : "Can I carry bananas?",
 								"body" : "I just realized that with the formalities I probably wouldn' be able to carry any other food. Does a banana suffice?",
 								"votes" : 9
 								}
 
-		self.longer_question_payload = {
-		"meetup" : 19,
+		self.longer_question_payld = {
+		"meetup" : 1,
 		"title" : "Who is the next James Bond?",
 		"body" : "is it true that Idris Elba has been baiting people into believing he's the next James Bond?",
 		"votes" : 9,
@@ -40,7 +40,7 @@ class DataStructureDatabase():
 		"Age": 23
 		}
 
-		self.shorter_question_payload = {
+		self.shorter_question_payld = {
 		"meetup" : 19,
 		"title" : "Who is the next James Bond?"
 		}
@@ -66,10 +66,10 @@ class DataStructureDatabase():
 		return self.question_payload
 
 	def longer_question_payload(self):
-		return self.longer_question_payload
+		return self.longer_question_payld
 
 	def shorter_question_payload(self):
-		return self.shorter_question_payload
+		return self.shorter_question_payld
 
 	def rvsp_payload(self):
 		return self.properrsvp_payload

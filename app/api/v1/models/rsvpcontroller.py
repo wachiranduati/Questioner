@@ -1,6 +1,10 @@
 from .meetupscontroller import MeetUpController
+from app.api.v1.utils.customrequesthandler import CustomValidationRequestHandler
+
 
 meetupCntrl = MeetUpController()
+customrqstHndlr = CustomValidationRequestHandler()
+
 
 rsrpReservations = []
 class RsvController():
@@ -17,25 +21,25 @@ class RsvController():
 		#check whether id exists
 		self.exists = False
 		for rsvpMeetup in rsrpReservations:
-			if rsvpMeetup['user'] == self.user and rsvpMeetup['meetup'] == id:
+			if rsvpMeetup['user'] == self.user:
 				self.exists = True
 				break
 
 		if self.exists == True:
-			return {
-					"status" : 409,
-					"error" : "Reservation already exists on said Meetup"
-					}, 409
+			return customrqstHndlr.custom_request_made(409, 'Reservation already exists on said  meetup')
+			
 		else:
 			for rqField in self.required_fields:
 				if rqField not in data:
 					self.all_required_fields = False
+					self.missing_field = rqField
 
 		if self.all_required_fields == True:
 			#check whether expected responses are found
 			for self.response in self.accepted_responses:
-				if self.response in data['response']:
+				if self.response in data['response'].lower():
 					self.response_found = True
+					self.responded_with = self.response
 
 			if self.response_found == True:
 				# data['id'] = int(rsrpReservations[-1]['id'] + 1)
@@ -46,36 +50,26 @@ class RsvController():
 					data['topic'] = meetup['topic']
 					data['meetup'] = id
 					rsrpReservations.append(data)
-					return {
+					return customrqstHndlr.success_request_made(201, {
 							"status" : 201,
 							"data" : [{
 							"meetup" : id,
 							"topic" : data['topic'],
-							"status": data['response']
-							}]}, 201
-				else:
-					return {
-					"status" : 400,
-					"error" : "Meetup with that id does not exist"
-					}, 400
+							"status": self.responded_with
+							}]})
 
+				else:
+					return customrqstHndlr.custom_request_made(400, 'Meetup with that id does not exist')
 				
 
 			else:
-				return {
-					"status" : 400,
-					"error" : "Please use YES, NO OR MAYBE as a response"
-					}, 400 
+				return customrqstHndlr.custom_request_made(400, 'Please use *yes*, *no* or *maybe* as a response')
+				
 
 		else:
-			return {
-					"status" : 400,
-					"error" : "Please provide all the required fields and try again"
-					}, 400 
+			return customrqstHndlr.custom_request_missing_field(400, self.missing_field)
 
 
 
 	def showall_rsvps(self):
-		return {"status":200,
-				"data": rsrpReservations
-				}, 200
+		return customrqstHndlr.success_request_made(200, rsrpReservations)
