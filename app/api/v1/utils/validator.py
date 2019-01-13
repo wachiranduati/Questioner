@@ -13,7 +13,7 @@ maxminlength = {
 	"maxtags": 9 
 	}
 
-class TestValidator():
+class PostedDataValidator():
 
 	def emptyrequest(self, data):
 		if data == None or data == '':

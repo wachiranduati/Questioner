@@ -1,11 +1,11 @@
 import unittest
 from app import create_app
-from app.api.v1.utils.validator import TestValidator
+from app.api.v1.utils.validator import PostedDataValidator
 
 
 class ValidatorTestSys(unittest.TestCase):
 	def setUp(self):
-		self.validt = TestValidator()
+		self.validt = PostedDataValidator()
 
 # question specific
 		self.missing_meetup = {}
