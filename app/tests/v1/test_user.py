@@ -25,8 +25,6 @@ class TestUserEndpoints(unittest.TestCase):
 		self.assertEqual(self.response_message.status_code, 400)
 		self.response_message = self.client.get('/api/v1/meetups/2.3')
 		self.assertEqual(self.response_message.status_code, 400)
-		self.response_message = self.client.get('/api/v1/meetups/girl/boy')
-		self.assertEqual(self.response_message.status_code, 400)
 
 	def test_userpostquestion_success(self):
 		self.response_message = self.client.post('/api/v1/questions',

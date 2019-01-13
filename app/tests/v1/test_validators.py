@@ -95,221 +95,207 @@ class ValidatorTestSys(unittest.TestCase):
 		self.assertEqual(resp, True)
 
 	def test_meetup_present(self):
-		resp = self.validt.meetup_id_provided(self.missing_meetup)
+		resp = self.validt.x_in_data('meetup', self.missing_meetup)
 		self.assertEqual(resp, False)
-		resp = self.validt.meetup_id_provided(self.meetup_present)
+		resp = self.validt.x_in_data('meetup', self.meetup_present)
 		self.assertEqual(resp, True)
 
+
 	def test_title_present(self):
-		resp = self.validt.title_provided(self.meetup_present)
+		resp = self.validt.x_in_data('title',self.meetup_present)
 		self.assertEqual(resp, False)
-		resp = self.validt.title_provided(self.all_present)
+		resp = self.validt.x_in_data('title',self.all_present)
 		self.assertEqual(resp, True)
 
 	def test_body_present(self):
-		resp = self.validt.body_provided(self.meetup_present)
+		resp = self.validt.x_in_data('body',self.meetup_present)
 		self.assertEqual(resp, False)
-		resp = self.validt.body_provided(self.all_present)
+		resp = self.validt.x_in_data('body',self.all_present)
 		self.assertEqual(resp, True)
 
 	def test_votes_present(self):
-		resp = self.validt.votes_provided(self.meetup_present)
+		resp = self.validt.x_in_data('votes',self.meetup_present)
 		self.assertEqual(resp, False)
-		resp = self.validt.votes_provided(self.all_present)
+		resp = self.validt.x_in_data('votes',self.all_present)
 		self.assertEqual(resp, True)
 
 	def test_meetup_is_instance_of_int(self):
-		resp = self.validt.meetup_instance_of_int(self.meetup_present['meetup'])
+		resp = self.validt.x_instance_of(self.meetup_present['meetup'], int)
 		self.assertEqual(resp, True)
-		resp = self.validt.meetup_instance_of_int(self.all_present_wrong_instace['meetup'])
+		resp = self.validt.x_instance_of(self.all_present_wrong_instace['meetup'], int)
 		self.assertEqual(resp, False)
 
 	def test_title_is_instance_of_int(self):
-		resp = self.validt.title_instance_of_str(self.all_present['title'])
+		resp = self.validt.x_instance_of(self.all_present['title'], str)
 		self.assertEqual(resp, True)
-		resp = self.validt.title_instance_of_str(self.all_present_wrong_instace['title'])
+		resp = self.validt.x_instance_of(self.all_present_wrong_instace['title'], str)
 		self.assertEqual(resp, False)
 
 	def test_body_is_instance_of_int(self):
-		resp = self.validt.body_instance_of_str(self.all_present['body'])
+		resp = self.validt.x_instance_of(self.all_present['body'], str)
 		self.assertEqual(resp, True)
-		resp = self.validt.body_instance_of_str(self.all_present_wrong_instace['body'])
+		resp = self.validt.x_instance_of(self.all_present_wrong_instace['body'], str)
 		self.assertEqual(resp, False)
 
 	def test_votes_is_instance_of_int(self):
-		resp = self.validt.votes_instance_of_str(self.all_present['votes'])
+		resp = self.validt.x_instance_of(self.all_present['votes'], int)
 		self.assertEqual(resp, True)
-		resp = self.validt.votes_instance_of_str(self.all_present_wrong_instace['votes'])
+		resp = self.validt.x_instance_of(self.all_present_wrong_instace['votes'], int)
 		self.assertEqual(resp, False)
 
 	def test_title_max_length(self):
-		resp = self.validt.title_max_length_reached(self.maxedout_data['title'])
+		resp = self.validt.x_too_large(self.maxedout_data['title'], 20)
 		self.assertEqual(resp, True)
-		resp = self.validt.title_max_length_reached(self.minnedout_data['title'])
+		resp = self.validt.x_too_large(self.minnedout_data['title'], 20)
 		self.assertEqual(resp, False)
 
 	def test_body_max_length(self):
-		resp = self.validt.body_max_length_reached(self.maxedout_data['body'])
+		resp = self.validt.x_too_large(self.maxedout_data['body'], 1500)
 		self.assertEqual(resp, True)
-		resp = self.validt.body_max_length_reached(self.minnedout_data['body'])
+		resp = self.validt.x_too_large(self.minnedout_data['body'], 1500)
 		self.assertEqual(resp, False)
 
 	def test_title_min_length(self):
-		resp = self.validt.title_min_length_reached(self.minnedout_data['title'])
+		resp = self.validt.x_too_small(self.minnedout_data['title'], 20)
 		self.assertEqual(resp, True)
-		resp = self.validt.title_min_length_reached(self.maxedout_data['title'])
+		resp = self.validt.x_too_small(self.maxedout_data['title'], 20)
 		self.assertEqual(resp, False)
 
 	def test_body_min_length(self):
-		resp = self.validt.body_min_length_reached(self.minnedout_data['body'])
+		resp = self.validt.x_too_small(self.minnedout_data['body'], 500)
 		self.assertEqual(resp, True)
-		resp = self.validt.body_min_length_reached(self.maxedout_data['body'])
+		resp = self.validt.x_too_small(self.maxedout_data['body'], 500)
 		self.assertEqual(resp, False)
-
-
 
 # question specific
 # meetup specific
 	def test_location_present(self):
-		resp = self.validt.location_provided_meetup(self.meetup_provided)
+		resp = self.validt.x_in_data('location',self.meetup_provided)
 		self.assertEqual(resp, True)
-		resp = self.validt.location_provided_meetup(self.missing_meetup)
+		resp = self.validt.x_in_data('location',self.missing_meetup)
 		self.assertEqual(resp, False)
 
 	def test_topic_present(self):
-		resp = self.validt.topic_provided_meetup(self.meetup_provided)
+		resp = self.validt.x_in_data('topic',self.meetup_provided)
 		self.assertEqual(resp, True)
-		resp = self.validt.topic_provided_meetup(self.missing_meetup)
+		resp = self.validt.x_in_data('topic',self.missing_meetup)
 		self.assertEqual(resp, False)
 
 	def test_happingOn_present(self):
-		resp = self.validt.happeningOn_provided_meetup(self.meetup_provided)
+		resp = self.validt.x_in_data('happeningOn',self.meetup_provided)
 		self.assertEqual(resp, True)
-		resp = self.validt.happeningOn_provided_meetup(self.missing_meetup)
+		resp = self.validt.x_in_data('happeningOn',self.missing_meetup)
 		self.assertEqual(resp, False)
 
 	def test_tags_present(self):
-		resp = self.validt.tags_provided_meetup(self.meetup_provided)
+		resp = self.validt.x_in_data('tags',self.meetup_provided)
 		self.assertEqual(resp, True)
-		resp = self.validt.tags_provided_meetup(self.missing_meetup)
+		resp = self.validt.x_in_data('tags',self.missing_meetup)
 		self.assertEqual(resp, False)
 
 	def test_images_present(self):
-		resp = self.validt.images_provided_meetup(self.meetup_provided)
+		resp = self.validt.x_in_data('images',self.meetup_provided)
 		self.assertEqual(resp, True)
-		resp = self.validt.images_provided_meetup(self.missing_meetup)
+		resp = self.validt.x_in_data('images',self.missing_meetup)
 		self.assertEqual(resp, False)
-
-	def location_is_instace_str(self):
-		resp = self.validt.images_provided_meetup(self.meetup_provided)
-		self.assertEqual(resp, True)
-		resp = self.validt.images_provided_meetup(self.missing_meetup)
-		self.assertEqual(resp, False)
-
 
 	def test_images_is_instance_list(self):
-		resp = self.validt.images_is_list(self.meetup_provided['images'])
+		resp = self.validt.x_instance_of(self.meetup_provided['images'], list)
 		self.assertEqual(resp, True)
-		resp = self.validt.images_is_list(self.meetup_wrong_type['images'])
+		resp = self.validt.x_instance_of(self.meetup_wrong_type['images'], list)
 		self.assertEqual(resp, False)
 
 	def test_topic_is_instance_str(self):
-		resp = self.validt.topic_is_str(self.meetup_provided['topic'])
+		resp = self.validt.x_instance_of(self.meetup_provided['topic'],str)
 		self.assertEqual(resp, True)
-		resp = self.validt.topic_is_str(self.meetup_wrong_type['topic'])
+		resp = self.validt.x_instance_of(self.meetup_wrong_type['topic'],str)
 		self.assertEqual(resp, False)
 
 	def test_happeningOn_is_instance_str(self):
-		resp = self.validt.happeningOn_is_str(self.meetup_provided['happeningOn'])
+		resp = self.validt.x_instance_of(self.meetup_provided['happeningOn'], str)
 		self.assertEqual(resp, True)
-		resp = self.validt.happeningOn_is_str(self.meetup_wrong_type['happeningOn'])
+		resp = self.validt.x_instance_of(self.meetup_wrong_type['happeningOn'], str)
 		self.assertEqual(resp, False)
 
-	def test_tags_is_instance_str(self):
-		resp = self.validt.tags_is_list(self.meetup_provided['tags'])
+	def test_tags_is_instance_lst(self):
+		resp = self.validt.x_instance_of(self.meetup_provided['tags'], list)
 		self.assertEqual(resp, True)
-		resp = self.validt.tags_is_list(self.meetup_wrong_type['tags'])
+		resp = self.validt.x_instance_of(self.meetup_wrong_type['tags'], list)
 		self.assertEqual(resp, False)
 
 	def test_location_min_length_meetup(self):
-		resp = self.validt.meetup_location_min_length_reached(self.min_meetup['location'])
+		resp = self.validt.x_too_small(self.min_meetup['location'], 4)
 		self.assertEqual(resp, True)
-		resp = self.validt.meetup_location_min_length_reached(self.max_meetup['location'])
+		resp = self.validt.x_too_small(self.max_meetup['location'], 4)
 		self.assertEqual(resp, False)
 
 	def test_location_max_length_meetup(self):
-		resp = self.validt.meetup_location_max_length_reached(self.max_meetup['location'])
+		resp = self.validt.x_too_large(self.max_meetup['location'], 100)
 		self.assertEqual(resp, True)
-		resp = self.validt.meetup_location_max_length_reached(self.min_meetup['location'])
+		resp = self.validt.x_too_large(self.min_meetup['location'], 100)
 		self.assertEqual(resp, False)
 
 
 	def test_images_max_length_meetup(self):
 		# images list test whether larger than allowed number
-		resp = self.validt.meetup_images_max_length_reached(self.max_meetup['images'])
+		resp = self.validt.x_too_large(self.max_meetup['images'], 2)
 		self.assertTrue(resp)
 
 	def test_topics_min_length_meetup(self):
-		resp = self.validt.meetup_topics_min_length_reached(self.min_meetup['topic'])
+		resp = self.validt.x_too_small(self.min_meetup['topic'], 3)
 		self.assertTrue(resp)
-		resp = self.validt.meetup_topics_min_length_reached(self.max_meetup['topic'])
+		resp = self.validt.x_too_small(self.max_meetup['topic'], 3)
 		self.assertFalse(resp)
 
 	def test_topics_max_length_meetup(self):
-		resp = self.validt.meetup_topics_max_length_reached(self.max_meetup['topic'])
+		resp = self.validt.x_too_large(self.max_meetup['topic'], 100)
 		self.assertTrue(resp)
-		resp = self.validt.meetup_topics_max_length_reached(self.min_meetup['topic'])
+		resp = self.validt.x_too_large(self.min_meetup['topic'], 100)
 		self.assertFalse(resp)
 
-
 	def test_happeningOn_min_length_meetup(self):
-		resp = self.validt.meetup_happeningOn_min_length_reached(self.min_meetup['happeningOn'])
+		resp = self.validt.x_too_small(self.min_meetup['happeningOn'], 8)
 		self.assertTrue(resp)
-		resp = self.validt.meetup_happeningOn_min_length_reached(self.max_meetup['happeningOn'])
+		resp = self.validt.x_too_small(self.max_meetup['happeningOn'], 8)
 		self.assertFalse(resp)
 
 	def test_happeningOn_max_length_meetup(self):
-		resp = self.validt.meetup_happeningOn_max_length_reached(self.max_meetup['happeningOn'])
+		resp = self.validt.x_too_large(self.max_meetup['happeningOn'], 25)
 		self.assertTrue(resp)
-		resp = self.validt.meetup_happeningOn_max_length_reached(self.min_meetup['happeningOn'])
+		resp = self.validt.x_too_large(self.min_meetup['happeningOn'], 25)
 		self.assertFalse(resp)
 
 	def test_tags_max_length_meetup(self):
-		resp = self.validt.meetup_tags_max_length_reached(self.max_meetup['tags'])
+		resp = self.validt.x_too_large(self.max_meetup['tags'], 9)
 		self.assertTrue(resp)
-		resp = self.validt.meetup_tags_max_length_reached(self.meetup_provided['tags'])
+		resp = self.validt.x_too_large(self.meetup_provided['tags'], 9)
 		self.assertFalse(resp)
-
-	
 
 #rsv specific
 
 	def test_rsv_meetup_present(self):
-		resp = self.validt.rsv_meetup_provided(self.rsvnorm)
+		resp = self.validt.x_in_data('meetup', self.rsvnorm)
 		self.assertEqual(resp, True)
-		resp = self.validt.rsv_meetup_provided(self.rsvempty)
+		resp = self.validt.x_in_data('meetup', self.rsvempty)
 		self.assertEqual(resp, False)
 
 	def test_rsv_response_present(self):
-		resp = self.validt.rsv_response_provided(self.rsvnorm)
+		resp = self.validt.x_in_data('response',self.rsvnorm)
 		self.assertEqual(resp, True)
-		resp = self.validt.rsv_response_provided(self.rsvempty)
+		resp = self.validt.x_in_data('response',self.rsvempty)
 		self.assertEqual(resp, False)
 
-
 	def test_rsv_response_instance(self):
-		resp = self.validt.rsv_response_is_str(self.rsvnorm['response'])
+		resp = self.validt.x_instance_of(self.rsvnorm['response'], str)
 		self.assertEqual(resp, True)
-		resp = self.validt.rsv_response_is_str(self.rsvodd['response'])
+		resp = self.validt.x_instance_of(self.rsvodd['response'], str)
 		self.assertEqual(resp, False)
 
 	def test_rsv_meetup_instance(self):
-		resp = self.validt.rsv_meetup_is_int(self.rsvnorm['meetup'])
+		resp = self.validt.x_instance_of(self.rsvnorm['meetup'], int)
 		self.assertEqual(resp, True)
-		resp = self.validt.rsv_meetup_is_int(self.rsvodd['meetup'])
+		resp = self.validt.x_instance_of(self.rsvodd['meetup'], int)
 		self.assertEqual(resp, False)
-
-
 
 #rsv specific
 
@@ -325,11 +311,17 @@ class ValidatorTestSys(unittest.TestCase):
 		resp = self.validt.rsvp_response_correct('yeo')
 		self.assertFalse(resp)
 
-
 # other specific
 
-# meetup specific
+	def test_complex(self):
+		resp = self.validt.all_checks('location', self.max_meetup, 100, 4, str)
+		self.assertFalse(resp[0])
+		resp = self.validt.all_checks('location', self.min_meetup, 100, 4, str)
+		self.assertFalse(resp[0])
+		resp = self.validt.all_checks('location', self.meetup_provided, 100, 4, str)
+		self.assertTrue(resp)
 
+# meetup specific
 
 	def tearDown(self):
 		self.validt = None

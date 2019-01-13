@@ -21,7 +21,6 @@ class QuestionsController():
 	def PostQuestion(self, data):
 		# Questions.append(data)
 		# return Questions
-		# this is buggy// check whether question and meetup exists
 		if meetupCntrl.checkwhethermeetup_exists(data['meetup']) == True:
 			for self.requiredField in self.required:
 				if self.requiredField not in data:
