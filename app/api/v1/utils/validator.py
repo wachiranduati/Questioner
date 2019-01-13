@@ -21,211 +21,27 @@ class PostedDataValidator():
 		else:
 			return False
 
-	def meetup_id_provided(self, data):
-		if 'meetup' in data:
+	def x_in_data(self, x, data):
+		if x in data:
 			return True
 		else:
 			return False
 
-	def title_provided(self, data):
-		if 'title' in data:
-			return True
-		else:
-			return False
-
-	def body_provided(self, data):
-		if 'body' in data:
-			return True
-		else:
-			return False
-
-	def votes_provided(self, data):
-		if 'votes' in data:
-			return True
-		else:
-			return False
-
-	def meetup_instance_of_int(self, data):
-		self.state = isinstance(data, int)
+	def x_instance_of(self, x, typ):
+		self.state = isinstance(x, typ)
 		if self.state == True:
 			return True
 		else:
 			return False
 
-	def title_instance_of_str(self, data):
-		self.state = isinstance(data, str)
-		if self.state == True:
+	def x_too_large(self, data, max):
+		if len(data) > max:
 			return True
 		else:
 			return False
 
-	def body_instance_of_str(self, data):
-		self.state = isinstance(data, str)
-		if self.state == True:
-			return True
-		else:
-			return False
-
-	def votes_instance_of_str(self, data):
-		self.state = isinstance(data, int)
-		if self.state == True:
-			return True
-		else:
-			return False
-
-	def title_max_length_reached(self, data):
-		if len(data) > maxminlength['maxtitle']:
-			return True
-		else:
-			return False
-
-	def body_max_length_reached(self, data):
-		if len(data) > maxminlength['maxbody']:
-			return True
-		else:
-			return False
-
-	def title_min_length_reached(self, data):
-		if len(data) < maxminlength['mintitle']:
-			return True
-		else:
-			return False
-
-	def body_min_length_reached(self, data):
-		if len(data) < maxminlength['minbody']:
-			return True
-		else:
-			return False
-
-
-
-	def location_provided_meetup(self, data):
-		if 'location' in data:
-			return True
-		else:
-			return False
-
-	def topic_provided_meetup(self, data):
-		if 'topic' in data:
-			return True
-		else:
-			return False
-
-	def happeningOn_provided_meetup(self,data):
-		if 'happeningOn' in data:
-			return True
-		else:
-			return False
-
-	def tags_provided_meetup(self,data):
-		if 'tags' in data:
-			return True
-		else:
-			return False
-
-	def images_provided_meetup(self, data):
-		if 'images' in data:
-			return True
-		else:
-			return False
-
-	def images_is_list(self, data):
-		self.state = isinstance(data, list)
-		if self.state == True:
-			return True
-		else:
-			return False 
-
-	def topic_is_str(self, data):
-		self.state = isinstance(data, str)
-		if self.state == True:
-			return True
-		else:
-			return False 
-
-	def happeningOn_is_str(self, data):
-		self.state = isinstance(data, str)
-		if self.state == True:
-			return True
-		else:
-			return False
-
-	def tags_is_list(self, data):
-		self.state = isinstance(data, list)
-		if self.state == True:
-			return True
-		else:
-			return False
-
-	def rsv_meetup_provided(self, data):
-		if 'meetup' in data:
-			return True
-		else:
-			return False
-	def rsv_response_provided(self, data):
-		if 'meetup' in data:
-			return True
-		else:
-			return False
-
-	def meetup_location_min_length_reached(self, data):
-		if len(data) < maxminlength['minlocation']:
-			return True
-		else:
-			return False
-
-	def meetup_location_max_length_reached(self, data):
-		if len(data) > maxminlength['maxlocation']:
-			return True
-		else:
-			return False
-
-	def meetup_images_max_length_reached(self, data):
-		if len(data) > maxminlength['maximages']:
-			return True
-		else:
-			return False
-
-	def meetup_topics_min_length_reached(self, data):
-		if len(data) < maxminlength['mintopic']:
-			return True
-		else:
-			return False
-
-	def meetup_topics_max_length_reached(self, data):
-		if len(data) > maxminlength['maxtopic']:
-			return True
-		else:
-			return False
-
-	def meetup_happeningOn_max_length_reached(self, data):
-		if len(data) > maxminlength['maxhappeningOn']:
-			return True
-		else:
-			return False
-
-	def meetup_happeningOn_min_length_reached(self, data):
-		if len(data) < maxminlength['minhappeningOn']:
-			return True
-		else:
-			return False
-
-	def meetup_tags_max_length_reached(self, data):
-		if len(data) > maxminlength['maxtags']:
-			return True
-		else:
-			return False
-
-	def rsv_response_is_str(self, data):
-		rsv_state = isinstance(data, str)
-		if rsv_state == True:
-			return True
-		else:
-			return False
-
-	def rsv_meetup_is_int(self, data):
-		rsv_state = isinstance(data, int)
-		if rsv_state == True:
+	def x_too_small(self, data, min):
+		if len(data) < min:
 			return True
 		else:
 			return False
@@ -236,3 +52,20 @@ class PostedDataValidator():
 		else:
 			return False
 
+	def all_checks(self, x, data, max, min, typ):
+		if self.x_in_data(x, data) == True:
+			if self.x_instance_of(data[x], typ) == True:
+				if self.x_too_large(data[x], max) == False:
+					if self.x_too_small(data[x], min) == False:
+						return True
+					else:
+						return [False, '{}'.format(x)]
+				else:
+					return [False, '{}'.format(x)]
+			else:
+				return [False, '{}'.format(x)]
+		else:
+			return [False, '{}'.format(x)]
+
+	#'location','images','topic','happeningOn','Tags','details'
+	# def validateLocation(self,)

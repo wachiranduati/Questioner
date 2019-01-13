@@ -31,13 +31,10 @@ class getspecific(Resource):
 		return meetupcntrl.getone_meetup(id)
 		
 
-@UserApi.route('/api/v1/meetups/<string:id>')
-@UserApi.route('/api/v1/meetups/<float:id>')
-@UserApi.route('/api/v1/meetups/<path:id>')
-@UserApi.route('/api/v1/meetups/<uuid:id>')
+@UserApi.route('/api/v1/meetups/<id>')
 class getspecificerrors(Resource):
 	def get(self,id):
-		return customrqstHndlr.wrong_variable_rule('meetup ID')
+		return customrqstHndlr.wrong_variable_rule(id)
 
 @UserApi.route('/api/v1/questions')
 class postquestion(Resource):
@@ -46,14 +43,7 @@ class postquestion(Resource):
 		if questionReceived:
 			PostQuestionState = qstnscntrl.PostQuestion(questionReceived)
 			if PostQuestionState == True:
-				return customrqstHndlr.success_request_made(201, [
-							{
-							"user": questionReceived['createdBy'],
-							"meetup": questionReceived['meetup'],
-							"title": questionReceived['title'],
-							"body": questionReceived['body']
-							}
-						])
+				return customrqstHndlr.success_request_made(201, customrqstHndlr.user_post_questions_to_meetup(questionReceived))
 			elif PostQuestionState == 'notexist':
 				return customrqstHndlr.custom_request_made(400, 'Could not post the question, The meetup does not exist')
 
@@ -68,10 +58,8 @@ class patchupvotequestion(Resource):
 	def put(self, questionid):
 		return qstnscntrl.upvoteQuestion(questionid)
 
-@UserApi.route('/api/v1/questions/<string:questionid>/upvote')
-@UserApi.route('/api/v1/questions/<float:questionid>/upvote')
-@UserApi.route('/api/v1/questions/<path:questionid>/upvote')
-@UserApi.route('/api/v1/questions/<uuid:questionid>/upvote')
+
+@UserApi.route('/api/v1/questions/<questionid>/upvote')
 class SpeficicErrorsForUpvoteFunctionality(Resource):
 	def get(self,questionid):
 		return customrqstHndlr.wrong_variable_rule('question ID')
@@ -82,10 +70,7 @@ class patchdownvotequestion(Resource):
 		return qstnscntrl.downvoteQuestion(questionid)
 
 
-@UserApi.route('/api/v1/questions/<string:questionid>/downvote')
-@UserApi.route('/api/v1/questions/<float:questionid>/downvote')
-@UserApi.route('/api/v1/questions/<path:questionid>/downvote')
-@UserApi.route('/api/v1/questions/<uuid:questionid>/downvote')
+@UserApi.route('/api/v1/questions/<questionid>/downvote')
 class SpeficicErrorsForUpvoteFunctionality(Resource):
 	def get(self,questionid):
 		return customrqstHndlr.wrong_variable_rule('question ID')
@@ -102,8 +87,4 @@ class createMeetupRsvp(Resource):
 		if reservationMaking:
 			return rsvpCntr.add_rsvp(meetupid,reservationMaking)
 		else:
-			# return customrqstHndlr.custom_request_made(400, 'This request must be accompanied by the post data to create a meetup')
-			return {
-				"status" : 400,
-				"error" : "You did not provide any input"
-				}, 400
+			return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')

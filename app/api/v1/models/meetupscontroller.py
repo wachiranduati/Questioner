@@ -27,6 +27,7 @@ class MeetUpController():
 				break
 
 		if self.all_required_fields_present == True:
+			# if validatr.all_checks('location', data, 100, 4, str) ==
 			data['id'] = int(len(meetups) + 1)
 			data['createOn'] = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 			meetups.append(data)

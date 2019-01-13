@@ -12,7 +12,6 @@ meetupcntrl = MeetUpController()
 customrqstHndlr = CustomValidationRequestHandler()
 
 
-
 @api.route('/api/v1/meetups')
 class AdminCreateMeetup(Resource):
 	def post(self):
@@ -20,13 +19,7 @@ class AdminCreateMeetup(Resource):
 		if MeetupData:
 			PostMeetupState = meetupcntrl.create_meetup(MeetupData)
 			if PostMeetupState == True:
-				return customrqstHndlr.success_request_made(201, {
-							"topic": MeetupData['topic'],
-							"location": MeetupData['location'],
-							"happeningOn": MeetupData['happeningOn'],
-							"tags" : MeetupData['Tags']
-								})
-
+				return customrqstHndlr.success_request_made(201, customrqstHndlr.success_create_meetup_admin(MeetupData))
 				
 			else:
 				return customrqstHndlr.custom_request_missing_field(400, PostMeetupState[-1])
