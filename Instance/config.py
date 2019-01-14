@@ -1,5 +1,3 @@
-""" Flask configurations """
-
 import os
 import secrets
 
@@ -13,19 +11,19 @@ class Config(object):
 
 
 class DevelopmentConfig(Config):
-    """Configurations for Development."""
+    """Configurtions for Development."""
     DEBUG = True
     TESTING = True
 
 
 class TestingConfig(Config):
-    """Configurations for Testing, with a separate test database."""
+    """Configurations for Testing """
     TESTING = True
     DEBUG = True
 
 
 class ProductionConfig(Config):
-    """Configurations for Production."""
+    """Configuration for Production."""
     DEBUG = False
     TESTING = False
 
