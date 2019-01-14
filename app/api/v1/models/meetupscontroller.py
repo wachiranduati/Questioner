@@ -13,7 +13,7 @@ meetups = []
 class MeetUpController():
 	""" This class will act as the controller directly working with the meetups"""
 	def __init__(self):
-		self.required = ['location','images','topic','happeningOn','Tags','details']
+		self.required = ['location','topic','happeningOn','Tags','details']
 		self.all_required_fields_present = True
 	
 
@@ -28,6 +28,9 @@ class MeetUpController():
 
 		if self.all_required_fields_present == True:
 			# if validatr.all_checks('location', data, 100, 4, str) ==
+			if 'images' in data:
+				data['images'] = data['images'][:2]
+				
 			data['id'] = int(len(meetups) + 1)
 			data['createOn'] = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 			meetups.append(data)

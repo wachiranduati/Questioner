@@ -1,7 +1,7 @@
 maxminlength = {
 	"maxtitle":50,
 	"maxbody":1500,
-	"mintitle": 20,
+	"mintitle": 5,
 	"minbody": 500,
 	"maxlocation":100,
 	"minlocation":4,
@@ -47,7 +47,7 @@ class PostedDataValidator():
 			return False
 
 	def rsvp_response_correct(self, data):
-		if data.lower() == 'yes' or data.lower() == 'no' or data.lower() == 'maybe':
+		if 'yes' in data.lower() or 'no' in data.lower() or 'maybe' in data.lower():
 			return True
 		else:
 			return False

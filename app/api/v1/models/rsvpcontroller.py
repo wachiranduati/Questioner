@@ -11,7 +11,7 @@ class RsvController():
 	def __init__(self):
 		self.user = 2
 		self.accepted_responses = ['yes','no','maybe'] 
-		self.required_fields = ['meetup','response']
+		self.required_fields = ['response']
 		self.all_required_fields = True
 		self.response_found = False
 		# self.required_fields = ['meetup','user','response']
@@ -26,7 +26,7 @@ class RsvController():
 				break
 
 		if self.exists == True:
-			return customrqstHndlr.custom_request_made(409, 'Reservation already exists on said  meetup')
+			return customrqstHndlr.custom_request_made(409, 'Reservation already exists on said meetup')
 			
 		else:
 			for rqField in self.required_fields:
@@ -50,13 +50,11 @@ class RsvController():
 					data['topic'] = meetup['topic']
 					data['meetup'] = id
 					rsrpReservations.append(data)
-					return customrqstHndlr.success_request_made(201, {
-							"status" : 201,
-							"data" : [{
+					return customrqstHndlr.success_request_made(201, [{
 							"meetup" : id,
 							"topic" : data['topic'],
 							"status": self.responded_with
-							}]})
+							}])
 
 				else:
 					return customrqstHndlr.custom_request_made(400, 'Meetup with that id does not exist')

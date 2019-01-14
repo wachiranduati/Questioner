@@ -11,6 +11,12 @@ class CustomValidationRequestHandler():
 					"error" : resource
 					}, header 
 
+	def custom_request_made_max_min_missing(self, header, fld, max, min):
+		return {
+					"status" : header,
+					"error" : "Error with the request field the {} field should not be longer than {} nor smaller than {} or does not exist".format(fld, max, min)
+					}, header 
+
 	def custom_request_missing_field(self, header, resource):
 		return {
 					"status" : header,
