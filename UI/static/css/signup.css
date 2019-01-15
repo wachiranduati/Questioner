@@ -1,0 +1,147 @@
+/* SIGNUP PAGE */
+.signup_bod{
+	background-image: url('../images/meetup.jpg');
+	background-position: top;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+.overlay{
+	width: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+  overflow: auto;
+}
+
+.signupbox{
+	flex: 1 1 0;
+	width: 90%;
+	background-color: white;
+	margin: auto auto;
+	box-shadow: 1px 1px 4px black, 0 1px 2px black;
+	display: flex;
+}
+
+.rightpanel{
+	flex-grow: 1 1 0;
+	background-color: white;
+	justify-content: center;
+	min-width: 50px;
+
+}
+.rightpanel h3, .leftpanel h3{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.leftpanel{
+	color: white;
+	text-align: center;
+	background: url('../images/scene.jpg') no-repeat;
+	background-size: cover;
+	background-position: top;
+
+}
+
+.leftpanel h3, .leftpanel h5{
+  display: none;
+}
+
+.rightpanel form{
+	width: 100%;
+}
+.rightpanel input{
+	width: 90%;
+	margin: 1% auto 0 4%;
+	padding: 10px 0 10px 0;
+}
+.rightpanel label{
+	margin-left: 4%;
+}
+.rightpanel a{
+	margin-right: 2%;
+}
+.leftpanel .logo{
+	min-height: 20px;
+	max-height: 100px;
+  display: block;
+}
+.logo{
+  margin: 0 auto;
+}
+
+
+.loginrhtpanel{
+  background: url('../images/change.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /* height: 210px; */
+}
+.loginlftpanel form{
+	padding-top: 10px;
+}
+
+
+.loginlftpanel label{
+}
+.titleQstner{
+	display: inline;
+}
+
+.frontpg_info{
+  background-color: rgba(0, 0, 0, 0.63);
+}
+/* LOGIN PAGE */
+
+/* RESET PASSWORD PAGE */
+.restpassdpanel form{
+	padding: 0 0 50px 0;
+	margin-bottom: 0;
+	margin-top: 7%;
+}
+.overlay{
+	min-height: 100vh;
+}
+.resetpssdbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+.restpassdpanel h3{
+	color: black;
+	box-shadow: inset -4px 0px 0 black;
+	background-color: white;
+}
+
+.restpassdpanel p{
+	text-align: center;
+}
+.messgwell{
+	padding: 4px 10px;
+	margin-left: 5%;
+	background-color: rgb(201, 201, 201);
+	width: 80%;
+	border-left: 2px solid red;
+	color: rgb(70, 70, 70);
+	display: none;
+
+}
+.logoadmn{
+	position: absolute;
+	top: 35px;
+	left: 40%;
+}
+.indxfooter{
+ background-color: black;
+ color: white;
+ padding: 10px 0;
+ text-align: center;
+}
+
+/* PASSWORD RESET PAGE */
+
+/* SIGNUP PAGE */
+@media only screen and (min-width: 992px) {
+
+}

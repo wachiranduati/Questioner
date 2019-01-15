@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Admin - Edit Questioner Meetup</title>
   <!-- small screen -->
-  <link rel="stylesheet" media="screen and (min-width: 600px)" href="static/css/smallscreen.css">
+  <link rel="stylesheet" href="static/css/smallscreen.css">
   <!-- medium screen-->
-  <link rel="stylesheet" media="screen and (min-width: 768px)" href="static/css/mediumscreen.css">
+  <!-- <link rel="stylesheet" media="screen and (min-width: 768px)" href="static/css/mediumscreen.css"> -->
   <!-- large screen-->
-  <link rel="stylesheet" media="screen and (min-width: 992px)" href="static/css/main.css">
+  <!-- <link rel="stylesheet" media="screen and (min-width: 992px)" href="static/css/main.css"> -->
 
 	<style type="text/css">
 
@@ -16,47 +16,36 @@
 </head>
 <body class="crtmetpbod">
 	<div class="crtmeoverlay">
-    <div class="navmeetup">
-      <a href="index.html"><img class="navlogo" src="static/images/logo.png" alt="Questioner logo"></a>
-      <div class="crtmeetupright">
-        <ul class="accountbtnsadmin">
-          <li class="logoutnav">Logout</li>
-          <li class="userbtnscrtmet">Signup</li>
-          <li class="userbtnscrtmet">Login</li>
-
-        </ul>
-        <p class="admnsalut">Hey Nick, Welcome back</p>
-      </div>
+		<div class="navbar">
+				<div class="navdivs logo">
+					<a href="index.html"><img class="navlogo" src="static/images/logo.png" alt="Questioner logo"></a>
+				</div>
+				<div class="navdivs ">
+					<a href="#">login</a>
+					<a href="#">Register</a>
+				</div>
     </div>
     <div class="crtmeetupcontt">
-      <h3>Edit Questioner Meetup</h3>
-      <div class="previewwell">
-        <h3>Preview</h3>
-        <p>MEETUP TITLE: Cycling is such an enjoyable sport because you get to burn calories while exploring and sightseeing, plus de-stress and bond with friends.</p>
-        <p>MEETUP DETAILS: This is a great biking path from Westlands to Muthaiga around Karura Forest to the United Nations. The route is approximately 17 miles, but it also depends on the course taken. There are designated trails in Karura Forest for people to explore and it makes for a great Saturday activity with friends.There are many places to cycle in Limuru because the road doesn’t have many cars and the views of the tea plantations are amazing. This road also has some turns and sometimes it gets cold and misty during the cold months like June and July. Fog may impair visibility, so the best months are the drier ones.</p>
-        <img src="static/images/scene.jpg" alt="">
-        <img src="static/images/meetup.jpg" alt="">
-        <br><br>
-        <p>TAGS: upcountry, biking, hydrate, quads, beatufil world, free-spirit</p>
-      </div>
-      <hr>
+      <h3>Create New Questioner Meetup</h3>
       <form action="#">
-        <label for="meetuptitle">Edit your Meetup Title: </label>
+        <label for="meetuptitle">Enter your Meetup Title: </label>
         <br><br>
-        <input type="text" name="meetuptitle" value="Cycling is such an enjoyable sport because you get to burn calories while exploring and sightseeing, plus de-stress and bond with friends." placeholder="Edit New Meetup Title">
-        <label for="meetupdetails">Edit Your Meetup Details here: </label><br><br>
-        <textarea name="meetupdetails" rows="20" cols="80" placeholder="Edit your meetup details in here">This is a great biking path from Westlands to Muthaiga around Karura Forest to the United Nations. The route is approximately 17 miles, but it also depends on the course taken. There are designated trails in Karura Forest for people to explore and it makes for a great Saturday activity with friends.There are many places to cycle in Limuru because the road doesn’t have many cars and the views of the tea plantations are amazing. This road also has some turns and sometimes it gets cold and misty during the cold months like June and July. Fog may impair visibility, so the best months are the drier ones.</textarea>
-        <label for="meetuptags">Edit your Meetup Tags i.e <small>farming, irrigation, fertilizers</small></label><br><br>
-        <input value="upcountry, biking, hydrate, quads, beatufil world, free-spirit" type="text" name="meetuptags" id="meetuptags" placeholder="Please Enter your comma seperated tags">
-        <label for="imageone">Select Other Image(optional)</label><br><br>
+        <input type="text" name="meetuptitle" value="" placeholder="Enter New Meetup Title">
+        <label for="meetupdetails">Enter Your Meetup Details here: </label><br><br>
+        <textarea name="meetupdetails" rows="20" cols="80" placeholder="Enter your meetup details in here"></textarea>
+        <label for="meetuptags">Add Tags To Your New Meetup i.e <small>farming, irrigation, fertilizers</small></label><br><br>
+        <input type="text" name="meetuptags" id="meetuptags" placeholder="Please Enter your comma seperated tags">
+        <label for="imageone">Select Image(optional)</label><br><br>
         <input type="file" name="imageone" id="imageone"><br><br>
-        <label for="imagetwo">Select Other Image2(optional)</label><br><br>
+        <label for="imagetwo">Select Image2(optional)</label><br><br>
         <input type="file" name="imagetwo" id="imagetwo"><br><br>
-        <input type="submit" value="Edit Meetup">
+        <input type="submit" value="Create Meetup">
       </form>
 
     </div>
-
+		<div class="indxfooter">
+			<small>&copy; Copyright 2019 Questioner Inc</small>
+		</div>
 
 	</div>
 </body>

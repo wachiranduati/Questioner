@@ -643,5 +643,16 @@ li.indxuserbtnsscrtmet{
 	color: white;
 	background: red;
 }
+.navbar{
+	background-color: black;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.logo{
+	position: relative;
+	right: 500px;
+	top: -15px;
+}
 
 /* VIEW QUESTION PAGE */
