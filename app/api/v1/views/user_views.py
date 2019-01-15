@@ -108,3 +108,12 @@ class createMeetupRsvp(Resource):
 
         else:
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
+
+@UserApi.route('/api/v1/users')
+class createMeetupRsvp(Resource):
+    def post(self):
+        UserRegDetails = request.get_json()
+        if UserRegDetails:
+            
+        else:
+            return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')

@@ -100,8 +100,10 @@ class TestUserEndpoints(unittest.TestCase):
                                                  data=json.dumps(DataStrctPayloads.rvsp_payload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 409)
 
-    def test_user_registration(self):
-        
+    def test_user_registrationEmpty(self):
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(''), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
 
     def tearDown(self):
         self.app = None
