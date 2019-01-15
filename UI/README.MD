@@ -58,6 +58,6 @@ Questioner is a web app that enables users to create meetups and post questions 
 This project is licensed under the MIT License
 
 ## Acknowledgments
-
+* 
 * Andela #team3
 * Andela
