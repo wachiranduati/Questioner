@@ -1,0 +1,1986 @@
+
+/* SIGNUP PAGE */
+.signup_bod{
+	background-image: url('../images/meetup.jpg');
+	background-position: top;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+.overlay{
+	width: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+  overflow: auto;
+}
+
+.signupbox{
+	flex: 1 1 0;
+	width: 90%;
+	background-color: white;
+	margin: auto auto;
+	box-shadow: 1px 1px 4px black, 0 1px 2px black;
+	display: flex;
+}
+
+.rightpanel{
+	flex-grow: 1 1 0;
+	background-color: white;
+	justify-content: center;
+	min-width: 50px;
+
+}
+.rightpanel h3, .leftpanel h3{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.leftpanel{
+	color: white;
+	text-align: center;
+	background: url('../images/scene.jpg') no-repeat;
+	background-size: cover;
+	background-position: top;
+	min-width: 500px;
+
+}
+
+.leftpanel h3, .leftpanel h5{
+  display: none;
+}
+
+.rightpanel form{
+	width: 100%;
+}
+.rightpanel input{
+	width: 90%;
+	margin: 1% auto 0 4%;
+	padding: 10px 0 10px 0;
+}
+.rightpanel label{
+	margin-left: 4%;
+}
+.rightpanel a{
+	margin-right: 2%;
+}
+.leftpanel .logo{
+	min-height: 20px;
+	max-height: 100px;
+  display: block;
+}
+.logo{
+  margin: 0 auto;
+}
+
+
+/* SIGNUP PAGE */
+/* LOGIN PAGE */
+
+
+.loginrhtpanel{
+  background: url('../images/change.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /* height: 210px; */
+}
+.loginlftpanel form{
+	padding-top: 10px;
+}
+
+
+.loginlftpanel label{
+}
+.titleQstner{
+	display: inline;
+}
+
+.frontpg_info{
+  background-color: rgba(0, 0, 0, 0.63);
+}
+/* LOGIN PAGE */
+
+/* ADMIN LOGIN PAGE */
+.admnoverl{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	display: flex;
+	justify-content: center;
+}
+.admnsgnbox{
+	width: 80%;
+	height: auto;
+}
+.admnrghtpanel h3{
+	width: 100%;
+	background-color: black;
+	padding: 15px 0 15px 0;
+	margin-top: 0;
+	color: white;
+}
+
+.admnrghtpanel form{
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding: 0;
+}
+
+.admnrghtpanel form input[type="submit"]{
+	background-color: white;
+	border:2px solid #8100FF;
+	border-radius: 2px;
+	color: #8100FF;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.admnrghtpanel form input[type="submit"]:hover{
+	background-color: #8100FF;
+	border:2px solid white;
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.logoadmn{
+	position: absolute;
+	top: 35px;
+	left: 40%;
+}
+.admnrghtpanel{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+.admnrghtpanel form{
+	background-color: rgba(249, 249, 249, 0.79);
+	padding: 10px 0 10px 0;
+}
+.admnrghtpanel form label{
+	font-weight: 900;
+}
+
+/* ADMIN LOGIN PAGE */
+
+/* RESET PASSWORD PAGE */
+.restpassdpanel form{
+	padding: 0 0 50px 0;
+	margin-bottom: 0;
+	margin-top: 7%;
+}
+.overlay{
+	min-height: 100vh;
+}
+.resetpssdbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 30%;
+	background-position: top;
+}
+.restpassdpanel h3{
+	color: black;
+	box-shadow: inset -4px 0px 0 black;
+	background-color: white;
+}
+
+.restpassdpanel p{
+	text-align: center;
+}
+.messgwell{
+	padding: 4px 10px;
+	margin-left: 5%;
+	background-color: rgb(201, 201, 201);
+	width: 80%;
+	border-left: 2px solid red;
+	color: rgb(70, 70, 70);
+	display: none;
+
+}
+
+/* PASSWORD RESET PAGE */
+/* CREATE MEETUP PAGE */
+.crtmetpbod{
+	background: url('../images/doodle.jpg') repeat;
+	background-size: 25%;
+	background-position: top;
+	padding: 0;
+	margin: 0;
+	display: block;
+	height: auto;
+}
+
+.crtmeetupcontt{
+	width: 90%;
+	background-color: white;
+	min-height: 86vh;
+	margin: 0 auto;
+	padding: 20px;
+
+}
+.navbarmeetcrt{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	border: 1px solid black;
+	display: block;
+}
+
+.crtmetover{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	500px;
+
+}
+
+.navmeetup{
+	width: 100%;
+	background-color: black;
+	height: 40px;
+	padding: 5px 0;
+}
+
+.navlogo{
+	height: 50px;
+	margin-left: 1%;
+	position: absolute;
+	top: -1px;
+}
+
+.navmeetup li{
+	display: inline;
+	margin-right: 4%;
+	position: relative;
+	top: -17px;
+	left: 55%;
+	text-transform: capitalize;
+	color: white;
+	border: 1px solid white;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+li.logoutnav{
+	/* display: none; */
+}
+
+li.userbtnscrtmet{
+	display: none;
+}
+
+.accountbtnsadmin{
+
+}
+p.admnsalut{
+	color: white;
+	margin-right: 4%;
+	position: relative;
+	top: -16px;
+}
+
+.navmeetup li:hover{
+	color: black;
+	border: 1px solid white;
+	background-color: white;
+	cursor: pointer;
+}
+.crtmeoverlay{
+	width: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+	/* height: auto; */
+}
+
+.crtmeetupcontt h3{
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-bottom: 20px;
+}
+.footergnr{
+	width: 100%;
+	height: 20px;
+	background-color: black;
+	color: white;
+}
+.footergnr h4{
+	text-align: center;
+	padding: 10px;
+}
+.crtmeetupcontt input[type="text"], .crtmeetupcontt textarea{
+	display: block;
+	padding: 10px;
+	margin-bottom: 20px;
+	width: 90%;
+	border: 2px solid #8100FF;
+}
+.crtmeetupcontt input[type="submit"]{
+	width: 90%;
+	padding: 10px;
+	background-color: #8100FF;
+	border:2px solid white;
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+.crtmeetupcontt form input[type="submit"]:hover{
+	background-color: white;
+	border:2px solid #8100FF;
+	border-radius: 2px;
+	color: #8100FF;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/* CREATE MEETUP PAGE */
+
+/* EDIT MEETUP PAGE */
+.previewwell{
+	padding: 4px 10px;
+	margin-left: 5%;
+	background-color: rgb(201, 201, 201);
+	width: 80%;
+	border-left: 2px solid red;
+	color: rgb(70, 70, 70);
+}
+.previewwell img{
+	height: 150px;
+}
+/* EDIT MEETUP PAGE */
+
+/* INDEX PAGE */
+.indexbody{
+	padding: 0;
+	margin: 0;
+}
+.indexnavbar{
+}
+
+.meetupreadmore{
+  background-color: black;
+  padding:10px;
+  box-sizing: border-box;
+}
+
+.meetupreadmore:hover{
+  color:white;
+  background-color: white;
+  border: 2px solid black;
+}
+
+li.indxuserbtnsscrtmet{
+	display: inline;
+}
+.indexnavbar .logoutnav, .indexnavbar .admnsalut{
+	display: none;
+}
+.indexbanner{
+	background-image: url('../images/meetup.jpg');
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 150px;
+}
+.banneroverlay{
+	width: 100%;
+	height: 150px;
+	background-color: rgba(212, 51, 200, 0.7);
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	border-bottom: 2px solid #8100FF;
+}
+.banneroverlay h3, .banneroverlay p{
+	margin: 0 auto;
+	text-align: center;
+	text-transform: capitalize;
+	position: relative;
+	top: 40px;
+
+}
+.contentmeetups h2{
+  text-align: center;
+  text-transform: uppercase;
+}
+.banneroverlay p{
+	margin-top: 20px;
+}
+.meetupscontainer{
+	display: flex;
+	padding: 10px 20px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  flex-basis: 400px;
+}
+.meetupscontainer .meetup{
+	flex: 1 1 0;
+	min-width: 100%;
+	margin-right: 2$;
+	margin-bottom: 15%;
+	height: 410px;
+	box-shadow: 0 0 4px black;
+}
+.meetupbackdrp{
+	background-image: url('../images/meetup.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 58%;
+}
+.meetupbackdrp2{
+	background-image: url('../images/change.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 58%;
+	min-height: 200px;
+}
+.meetupbackdrp3{
+	background-image: url('../images/scene.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 58%;
+}
+.meetupcontent{
+	padding: 2px;
+  background-color: black;
+  color: white;
+}
+.meetupcontent h3{
+	margin: 2px 4px;
+	text-align: center;
+	text-transform: capitalize;
+}
+.meetupcontent p{
+	text-align: center;
+	color: rgba(112, 116, 112, 0.94);
+	font-weight: lighter;
+}
+.meetupreadmore a{
+	text-decoration: none;
+	color: #8100FF;
+	text-transform: uppercase;
+	margin-left: 30%;
+}
+
+.indxfooter{
+ background-color: black;
+ color: white;
+ padding: 10px 0;
+ text-align: center;
+}
+
+/* INDEX PAGE */
+/* ACCOUNT PROFILE PAGE */
+.profilebod{
+	background-image: url('../images/doodle.jpg');
+	background-size: 30%;
+	background-repeat: repeat;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+.userprofacc{
+	background-color: white;
+	margin: 0 auto;
+	min-height: 90vh;
+	height: auto;
+}
+.overlder{
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(129, 0, 255, 0.68);
+}
+.accimagprof{
+	height: 150px;
+	width:150px;
+	border: 2px solid black;
+	margin: 0 auto;
+	border-radius: 50%;
+	background-image: url('../images/doodle.jpg');
+	background-size: 100%;
+}
+.userprofacc{
+	padding-top: 20px;
+}
+.userprofacc h4{
+	text-align: center;
+}
+.classyrule{
+	width: 80%;
+	margin: 0 auto;
+	border-bottom: 1px solid gainsboro;
+}
+.qsntsposted{
+	width: 45%;
+	margin-top: 20px;
+	display: inline-block;
+}
+.qsntsposted .qstnpstchld{
+	width: 100%;
+	height: 40px;
+}
+.qstnpstchld h4{
+	margin: 1% 0;
+	padding: 2px 0;
+}
+
+.qstnchldtitle{
+	padding: 0;
+	margin: 0;
+	color: rgba(40, 40, 40, 0.65);
+}
+..upcomingmeetupsprof h3{
+	text-align: center;
+}
+.upcomingmeetupsprof{
+	height: 500px;
+	width: 100%;
+	background-color: gainsboro;
+	padding-top: 10px;
+}
+.meetupqustns li{
+	margin: 3px auto;
+}
+.meetupqustns li a{
+	text-decoration: none;
+}
+/* ACCOUNT PROFILE PAGE */
+/* VIEW MEETUP PAGE */
+.meetupdetailsviewiing{
+	min-height: 200px;
+	min-width:70%;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: rgba(159, 155, 156, 0.42);
+}
+
+.meetupdetailsviewiing h4{
+	margin: 0 auto;
+	text-transform: uppercase;
+}
+.meetupdetailsviewiing p{
+	text-align: left;
+}
+.viewingmeetup{
+	/* display: none; */
+}
+
+.questionmeetup{
+	width: 100%;
+	padding-left: 30px;
+}
+.qustnstitlemeetupbox{
+	text-align: center;
+	text-transform: uppercase;
+}
+.qstnactualexceprt{
+	background-color:gainboro;
+}
+.questionslist{
+	width: 92%;
+}
+.questionslist li{
+	margin-bottom: 2%;
+}
+
+.vmeetupaskqstncontainer{
+	padding: 20px;
+}
+.vmeetupaskqstncontainer textarea, .vmeetupaskqstncontainer input{
+	width: 95%;
+	margin-bottom: 2%;
+	border: 2px solid #8100FF;
+}
+
+.vmeetupaskqstncontainer input{
+	padding: 10px;
+}
+
+.adminMeetupbuttons{
+	margin: 10px auto;
+}
+
+.adminMeetupbuttons a{
+	padding: 20px;
+	border: 1px solid blue;
+	color: white;
+	background-color: blue;
+	text-decoration: none;
+}
+
+.adminMeetupbuttons .btndanger{
+	background-color: red;
+	border: 1px solid red;
+}
+.questionslist li{
+	border: 1px solid black;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+/* VIEW MEETUP PAGE */
+
+
+/* VIEW QUESTION PAGE */
+.qstrplies li{
+	padding: 10px;
+	border: 1px solid black;
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+.voteqstnbtns{
+	margin-top: 2%;
+	margin-bottom: 3%;
+}
+.voteqstnbtns a{
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+	margin-left: 10%;
+}
+.voteqstnbtns .btnsucc{
+	color: white;
+	background: blue;
+}
+.voteqstnbtns .btndanger{
+	color: white;
+	background: red;
+}
+
+/* VIEW QUESTION PAGE */
+
+/* SMALL CSS */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /*
+  bright purple
+  #F50DFF
+  dark purple
+  8100FF
+  */
+
+
+  /* SIGNUP PAGE */
+  .signup_bod{
+    height: 100vh;
+  	background-image: url('../images/meetup.jpg');
+  	background-size: cover;
+  	background-position: bottom;
+  	margin: 0;
+  	padding: 0;
+  	background-repeat: no-repeat;
+  }
+  .overlay{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	display: flex;
+  	justify-content: center;
+  }
+  .signupbox{
+  	width: 70%;
+  	height: 70vh;
+  	background-color: white;
+  	margin: auto auto;
+  	box-shadow: 1px 1px 4px black, 0 1px 2px black;
+  	display: flex;
+  }
+  .signupbox panel{
+  	height: 100%;
+  	padding: 7px;
+  }
+  .leftpanel{
+  	background-color: black;
+  	flex-grow: 1;
+    min-width: 350px;
+    max-width: 200px;
+		overflow: hidden;
+
+  }
+  .rightpanel{
+  	background-color: white;
+  	height: 100%;
+  	flex-grow: 2;
+  	min-width: 350px;
+  	justify-content: center;
+
+  }
+  .rightpanel h3, .leftpanel h3{
+  	text-align: center;
+  	text-transform: uppercase;
+  }
+
+  .leftpanel{
+  	color: white;
+  	text-align: center;
+  	background: url('../images/scene.jpg') no-repeat;
+  	background-size: cover;
+  	background-position: top;
+
+  }
+
+  .rightpanel form{
+  	width: 100%;
+  }
+  .rightpanel input{
+  	width: 90%;
+  	margin: 1% auto 0 4%;
+  	padding: 10px 0 10px 0;
+  }
+  .rightpanel label{
+  	margin-left: 4%;
+  }
+  .rightpanel a{
+  	margin-right: 2%;
+  }
+  .leftpanel .logo{
+  	min-height: 20px;
+  	max-height: 100px;
+  }
+
+  .leftpanel h3, .leftpanel h5{
+    display: block;
+  }
+
+  /* SIGNUP PAGE */
+
+  /* LOGIN PAGE */
+
+
+  .loginrhtpanel .frontpg_info{
+  	background-color: rgba(0, 0, 0, 0.63);
+  	padding: 5px 0 20px 0;
+  }
+  .loginlftpanel form{
+  	padding-top: 50px;
+
+  }
+
+  .loginlftpanel label{
+  }
+  .titleQstner{
+  	display: inline;
+  }
+
+
+  /* LOGIN PAGE */
+
+  /* ADMIN LOGIN PAGE */
+  .admnoverl{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	display: flex;
+  	justify-content: center;
+  }
+  .admnsgnbox{
+  	width: 50%;
+  	height: auto;
+  }
+  .admnrghtpanel h3{
+  	width: 100%;
+  	background-color: black;
+  	padding: 15px 0 15px 0;
+  	margin-top: 0;
+  	color: white;
+  }
+
+  .admnrghtpanel form{
+  	margin-top: 1%;
+  	margin-bottom: 1%;
+  	padding: 0;
+  }
+
+  .admnrghtpanel form input[type="submit"]{
+  	background-color: white;
+  	border:2px solid #8100FF;
+  	border-radius: 2px;
+  	color: #8100FF;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+
+  .admnrghtpanel form input[type="submit"]:hover{
+  	background-color: #8100FF;
+  	border:2px solid white;
+  	border-radius: 2px;
+  	color: white;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+  .logoadmn{
+  	position: absolute;
+  	top: 35px;
+  	left: 45%;;
+  }
+  .admnrghtpanel{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 30%;
+  	background-position: top;
+  }
+  .admnrghtpanel form{
+  	background-color: rgba(249, 249, 249, 0.79);
+  	padding: 10px 0 25px 0;
+  }
+  .admnrghtpanel form label{
+  	font-weight: 900;
+  }
+
+  .admnrghtpanel a {
+  	margin-top: 5px;
+  }
+
+  /* ADMIN LOGIN PAGE */
+
+  /* RESET PASSWORD PAGE */
+  .restpassdpanel form{
+  	padding: 0 0 50px 0;
+  	margin-bottom: 0;
+  }
+  .resetpssdbod{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 30%;
+  	background-position: top;
+  }
+  .restpassdpanel h3{
+  	color: black;
+  	box-shadow: inset -4px 0px 0 black;
+  	background-color: white;
+  }
+
+  .restpassdpanel p{
+  	text-align: center;
+  }
+  .messgwell{
+  	padding: 4px 10px;
+  	margin-left: 5%;
+  	background-color: rgb(201, 201, 201);
+  	width: 80%;
+  	border-left: 2px solid red;
+  	color: rgb(70, 70, 70);
+  	display: none;
+
+  }
+  /* RESET PASSWORD PAGE */
+  /* CREATE MEETUP PAGE */
+  .crtmetpbod{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 25%;
+  	background-position: top;
+  	padding: 0;
+  	margin: 0;
+  	display: block;
+  	height: auto;
+  }
+
+  .crtmeetupcontt{
+  	width: 90%;
+  	background-color: white;
+  	min-height: 86vh;
+  	margin: 0 auto;
+  	padding: 20px;
+
+  }
+  .navbarmeetcrt{
+  	width: 100%;
+  	height: 100px;
+  	background-color: white;
+  	border: 1px solid black;
+  	display: block;
+  }
+
+  .crtmetover{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	500px;
+
+  }
+
+  .navmeetup{
+  	width: 100%;
+  	background-color: black;
+  	height: 40px;
+  	padding: 5px 0;
+  }
+
+  .navlogo{
+  	height: 50px;
+  	margin-left: 1%;
+  	position: absolute;
+  	top: -1px;
+  }
+
+  .navmeetup li{
+  	display: inline;
+  	margin-right: 4%;
+  	position: relative;
+  	top: -15px;
+  	left: 70%;
+  	text-transform: capitalize;
+  	color: white;
+  	border: 1px solid white;
+  	padding: 5px 10px;
+  	border-radius: 5px;
+  }
+  li.logoutnav{
+  	/* display: none; */
+  }
+
+  li.userbtnscrtmet{
+  	display: none;
+  }
+
+  .accountbtnsadmin{
+
+  }
+  p.admnsalut{
+  	color: white;
+  	margin-right: 4%;
+  	position: relative;
+  	top: -16px;
+  }
+
+  .navmeetup li:hover{
+  	color: black;
+  	border: 1px solid white;
+  	background-color: white;
+  	cursor: pointer;
+  }
+  .crtmeoverlay{
+  	width: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	/* height: auto; */
+  }
+
+  .crtmeetupcontt h3{
+  	text-transform: uppercase;
+  	text-align: center;
+  	border-bottom: 1px solid black;
+  	padding-bottom: 20px;
+  }
+  .footergnr{
+  	width: 100%;
+  	height: 20px;
+  	background-color: black;
+  	color: white;
+  }
+  .footergnr h4{
+  	text-align: center;
+  	padding: 10px;
+  }
+  .crtmeetupcontt input[type="text"], .crtmeetupcontt textarea{
+  	display: block;
+  	padding: 10px;
+  	margin-bottom: 20px;
+  	width: 90%;
+  	border: 2px solid #8100FF;
+  }
+  .crtmeetupcontt input[type="submit"]{
+  	width: 90%;
+  	padding: 10px;
+  	background-color: #8100FF;
+  	border:2px solid white;
+  	border-radius: 2px;
+  	color: white;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+
+
+  .crtmeetupcontt form input[type="submit"]:hover{
+  	background-color: white;
+  	border:2px solid #8100FF;
+  	border-radius: 2px;
+  	color: #8100FF;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+  /* CREATE MEETUP PAGE */
+
+  /* EDIT MEETUP PAGE */
+  .previewwell{
+  	padding: 4px 10px;
+  	margin-left: 5%;
+  	background-color: rgb(201, 201, 201);
+  	width: 80%;
+  	border-left: 2px solid red;
+  	color: rgb(70, 70, 70);
+  }
+  .previewwell img{
+  	height: 150px;
+  }
+  /* EDIT MEETUP PAGE */
+  /* INDEX PAGE */
+  .indexbody{
+  	padding: 0;
+  	margin: 0;
+  }
+  .indexnavbar{
+  	width: 100%;
+  	background-color: black;
+  }
+  li.indxuserbtnsscrtmet{
+  	display: inline;
+  }
+  .indexnavbar .logoutnav, .indexnavbar .admnsalut{
+  	display: none;
+  }
+  .indexbanner{
+  	background-image: url('../images/meetup.jpg');
+  	background-size: 100%;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	height: 300px;
+  }
+  .banneroverlay{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(212, 51, 200, 0.7);
+  	color: white;
+  	text-shadow: 1px 1px 2px black;
+  	border-bottom: 2px solid #8100FF;
+  }
+  .banneroverlay h3, .banneroverlay p{
+  	margin: 0 auto;
+  	text-align: center;
+  	text-transform: capitalize;
+  	position: relative;
+  	top: 70px;
+
+  }
+  .banneroverlay p{
+  	margin-top: 20px;
+  }
+  .meetupscontainer{
+  	display: flex;
+  	padding: 10px 20px;
+  	flex-wrap: wrap;
+  	justify-content: flex-end;
+  }
+  .meetupscontainer .meetup{
+  	flex: 1 1 0;
+  	min-width: 300px;
+  	margin-right: 2%;
+  	max-width: 200px;
+  	margin-bottom: 15%;
+  	box-shadow: 0 0 4px black;
+  }
+  .meetupbackdrp{
+  	background-image: url('../images/meetup.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  }
+  .meetupbackdrp2{
+  	background-image: url('../images/change.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  	min-height: 200px;
+  }
+  .meetupbackdrp3{
+  	background-image: url('../images/scene.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  }
+  .meetupcontent{
+  	padding: 2px;
+  }
+  .meetupcontent h5{
+  	margin: 2px 4px;
+  	text-align: center;
+  	text-transform: capitalize;
+  }
+  .meetupcontent p{
+  	text-align: center;
+  	color: rgba(112, 116, 112, 0.94);
+  	font-weight: lighter;
+  }
+  .meetupreadmore a{
+  	text-decoration: none;
+  	color: #8100FF;
+  	text-transform: uppercase;
+  	margin-left: 29%;
+  }
+
+  .indxfooter{
+   background-color: black;
+   color: white;
+   padding: 10px 0;
+   text-align: center;;
+  }
+
+  /* INDEX PAGE */
+  /* ACCOUNT PROFILE PAGE */
+  .profilebod{
+  	background-image: url('../images/doodle.jpg');
+  	background-size: 30%;
+  	background-repeat: repeat;
+  	height: 100vh;
+  	margin: 0;
+  	padding: 0;
+  }
+  .userprofacc{
+  	background-color: white;
+  	width: 60%;
+  	margin: 0 auto;
+  	min-height: 90vh;
+  	height: auto;
+  }
+  .overlder{
+  	width: 100%;
+  	min-height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  }
+  .accimagprof{
+  	height: 150px;
+  	width:150px;
+  	border: 2px solid black;
+  	margin: 0 auto;
+  	border-radius: 50%;
+  	background-image: url('../images/doodle.jpg');
+  	background-size: 100%;
+  }
+  .userprofacc{
+  	padding-top: 20px;
+  }
+  .userprofacc h4{
+  	text-align: center;
+  }
+  .classyrule{
+  	width: 70%;
+  	margin: 0 auto;
+  	border-bottom: 1px solid gainsboro;
+  }
+  .qsntsposted{
+  	width: 45%;
+  	margin-top: 20px;
+  	display: inline-block;
+  }
+  .qsntsposted .qstnpstchld{
+  	width: 100%;
+  	height: 40px;
+  }
+  .qstnpstchld h4{
+  	margin: 1% 0;
+  	padding: 2px 0;
+  }
+
+  .qstnchldtitle{
+  	padding: 0;
+  	margin: 0;
+  	color: rgba(40, 40, 40, 0.65);
+  }
+  .upcomingmeetupsprof h3{
+  	text-align: center;
+  }
+  .upcomingmeetupsprof{
+  	height: 500px;
+  	width: 100%;
+  	background-color: gainsboro;
+  	padding-top: 10px;
+  }
+  .meetupqustns li{
+  	margin: 3px auto;
+  }
+  .meetupqustns li a{
+  	text-decoration: none;
+  }
+  /* ACCOUNT PROFILE PAGE */
+  /* VIEW MEETUP PAGE */
+  .meetupdetailsviewiing{
+  	min-height: 200px;
+  	min-width:70%;
+  	text-align: center;
+  	padding: 10px;
+  	box-sizing: border-box;
+  	background-color: rgba(159, 155, 156, 0.42);
+  }
+
+  .meetupdetailsviewiing h4{
+  	margin: 0 auto;
+  	text-transform: uppercase;
+  }
+  .meetupdetailsviewiing p{
+  	text-align: left;
+  }
+  .viewingmeetup{
+  	/* display: none; */
+  }
+
+  .questionmeetup{
+  	width: 100%;
+  	padding-left: 30px;
+  }
+  .qustnstitlemeetupbox{
+  	text-align: center;
+  	text-transform: uppercase;
+  }
+  .qstnactualexceprt{
+  	background-color:gainboro;
+  }
+  .questionslist{
+  	width: 92%;
+  }
+  .questionslist li{
+  	margin-bottom: 2%;
+  }
+
+  .vmeetupaskqstncontainer{
+  	padding: 20px;
+  }
+  .vmeetupaskqstncontainer textarea, .vmeetupaskqstncontainer input{
+  	width: 90%;
+  	margin-bottom: 2%;
+  	border: 2px solid #8100FF;
+  }
+
+  .vmeetupaskqstncontainer input{
+  	padding: 10px;
+  }
+
+  .adminMeetupbuttons{
+  	margin: 10px auto;
+  }
+
+  .adminMeetupbuttons a{
+  	padding: 20px;
+  	border: 1px solid blue;
+  	color: white;
+  	background-color: blue;
+  	text-decoration: none;
+  }
+  .adminMeetupbuttons .btndanger{
+  	background-color: red;
+  	border: 1px solid red;
+  }
+  .questionslist li{
+  	border: 1px solid black;
+  	box-sizing: border-box;
+  	padding: 10px;
+  }
+
+  /* VIEW MEETUP PAGE */
+
+
+  /* VIEW QUESTION PAGE */
+  .qstrplies li{
+  	padding: 10px;
+  	border: 1px solid black;
+  	list-style: none;
+  	margin-bottom: 10px;
+  }
+
+  .voteqstnbtns{
+  	margin-top: 2%;
+  	margin-bottom: 3%;
+  }
+  .voteqstnbtns a{
+  	padding: 10px;
+  	text-decoration: none;
+  	color: white;
+  	margin-left: 10%;
+  }
+  .voteqstnbtns .btnsucc{
+  	color: white;
+  	background: blue;
+  }
+  .voteqstnbtns .btndanger{
+  	color: white;
+  	background: red;
+  }
+
+  /* VIEW QUESTION PAGE */
+
+}
+@media (min-width: 992px){
+  /*
+  bright purple
+  #F50DFF
+  dark purple
+  8100FF
+  */
+  /* SIGNUP PAGE */
+  .signup_bod{
+    height: 100vh;
+  	background-image: url('../images/meetup.jpg');
+  	background-size: cover;
+  	background-position: bottom;
+  	margin: 0;
+  	padding: 0;
+  	background-repeat: no-repeat;
+  }
+  .overlay{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	display: flex;
+  	justify-content: center;
+  }
+  .signupbox{
+  	width: 70%;
+  	height: 70vh;
+  	background-color: white;
+  	margin: auto auto;
+  	box-shadow: 1px 1px 4px black, 0 1px 2px black;
+  	display: flex;
+  }
+  .signupbox panel{
+  	height: 100%;
+  	padding: 7px;
+  }
+  .leftpanel{
+  	background-color: black;
+  	flex-grow: 2.2;
+		overflow: hidden;
+
+  }
+  .rightpanel{
+  	background-color: white;
+  	height: 100%;
+  	flex-grow: 3;
+  	min-width: 500px;
+  	justify-content: center;
+
+  }
+  .rightpanel h3, .leftpanel h3{
+  	text-align: center;
+  	text-transform: uppercase;
+  }
+
+  .leftpanel{
+  	color: white;
+  	text-align: center;
+  	background: url('../images/scene.jpg') no-repeat;
+  	background-size: cover;
+  	background-position: top;
+
+  }
+
+  .rightpanel form{
+  	width: 100%;
+  }
+  .rightpanel input{
+  	width: 90%;
+  	margin: 1% auto 0 4%;
+  	padding: 10px 0 10px 0;
+  }
+  .rightpanel label{
+  	margin-left: 4%;
+  }
+  .rightpanel a{
+  	margin-right: 2%;
+  }
+  .leftpanel .logo{
+  	min-height: 20px;
+  	max-height: 100px;
+  }
+  .titleQstner{
+  	display: none;
+  }
+
+  .leftpanel h3, .leftpanel h5{
+    display: block;
+  }
+
+  .loginrhtpanel .frontpg_info{
+  	background-color: rgba(0, 0, 0, 0.63);
+  	padding: 5px 0 20px 0;
+  }
+  /* SIGNUP PAGE */
+
+  /* LOGIN PAGE */
+
+
+  .loginrhtpanel .frontpg_info{
+  	background-color: rgba(0, 0, 0, 0.63);
+  	padding: 5px 0 20px 0;
+  }
+  .loginlftpanel form{
+  	padding-top: 50px;
+
+  }
+
+  .loginlftpanel label{
+  }
+  .titleQstner{
+  	display: inline;
+  }
+
+
+  /* LOGIN PAGE */
+
+  /* ADMIN LOGIN PAGE */
+  .admnoverl{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	display: flex;
+  	justify-content: center;
+  }
+  .admnsgnbox{
+  	width: 40%;
+  	height: auto;
+  }
+  .admnrghtpanel h3{
+  	width: 100%;
+  	background-color: black;
+  	padding: 15px 0 15px 0;
+  	margin-top: 0;
+  	color: white;
+  }
+
+  .admnrghtpanel form{
+  	margin-top: 1%;
+  	margin-bottom: 1%;
+  	padding: 0;
+  }
+
+  .admnrghtpanel form input[type="submit"]{
+  	background-color: white;
+  	border:2px solid #8100FF;
+  	border-radius: 2px;
+  	color: #8100FF;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+
+  .admnrghtpanel form input[type="submit"]:hover{
+  	background-color: #8100FF;
+  	border:2px solid white;
+  	border-radius: 2px;
+  	color: white;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+  .logoadmn{
+  	position: absolute;
+  	top: 35px;
+  	left: 45%;;
+  }
+
+  .admnrghtpanel{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 30%;
+  	background-position: top;
+  }
+  .admnrghtpanel form{
+  	background-color: rgba(249, 249, 249, 0.79);
+  	padding: 10px 0 10px 0;
+  }
+  .admnrghtpanel form label{
+  	font-weight: 900;
+  }
+
+  .admnrghtpanel a {
+  	margin-top: 5px;
+  }
+
+  /* ADMIN LOGIN PAGE */
+
+  /* RESET PASSWORD PAGE */
+  .restpassdpanel form{
+  	padding: 0 0 50px 0;
+  	margin-bottom: 0;
+  }
+  .resetpssdbod{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 30%;
+  	background-position: top;
+  }
+  .restpassdpanel h3{
+  	color: black;
+  	box-shadow: inset -4px 0px 0 black;
+  	background-color: white;
+  }
+
+  .restpassdpanel p{
+  	text-align: center;
+  }
+
+  .messgwell{
+  	padding: 4px 10px;
+  	margin-left: 5%;
+  	background-color: rgb(201, 201, 201);
+  	width: 80%;
+  	border-left: 2px solid red;
+  	color: rgb(70, 70, 70);
+  	display: none;
+  }
+  /* RESET PASSWORD PAGE */
+
+  /* CREATE MEETUP PAGE */
+  .crtmetpbod{
+  	background: url('../images/doodle.jpg') repeat;
+  	background-size: 25%;
+  	background-position: top;
+  	padding: 0;
+  	margin: 0;
+  	display: block;
+  	height: auto;
+  }
+
+  .crtmeetupcontt{
+  	width: 90%;
+  	background-color: white;
+  	min-height: 86vh;
+  	margin: 0 auto;
+  	padding: 20px;
+
+  }
+  .navbarmeetcrt{
+  	width: 100%;
+  	height: 100px;
+  	background-color: white;
+  	border: 1px solid black;
+  	display: block;
+  }
+
+  .crtmetover{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	500px;
+
+  }
+
+  .navmeetup{
+  	width: 100%;
+  	background-color: black;
+  	height: 40px;
+  	padding: 5px 0;
+  }
+
+  .navlogo{
+  	height: 50px;
+  	margin-left: 1%;
+  	position: absolute;
+  	top: -1px;
+  }
+
+  .navmeetup li{
+  	display: inline;
+  	margin-right: 4%;
+  	position: relative;
+  	top: -12px;
+  	text-transform: capitalize;
+  	color: white;
+  	border: 1px solid white;
+  	padding: 5px 10px;
+  	border-radius: 5px;
+  }
+  li.logoutnav{
+  	/* display: none; */
+  }
+
+  li.userbtnscrtmet{
+  	display: none;
+  }
+
+  .accountbtnsadmin{
+
+  }
+  p.admnsalut{
+  	color: white;
+  	margin-right: 4%;
+  	position: relative;
+  	top: -16px;
+  }
+
+  .navmeetup li:hover{
+  	color: black;
+  	border: 1px solid white;
+  	background-color: white;
+  	cursor: pointer;
+  }
+  .crtmeoverlay{
+  	width: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  	/* height: auto; */
+  }
+
+  .crtmeetupcontt h3{
+  	text-transform: uppercase;
+  	text-align: center;
+  	border-bottom: 1px solid black;
+  	padding-bottom: 20px;
+  }
+  .footergnr{
+  	width: 100%;
+  	height: 20px;
+  	background-color: black;
+  	color: white;
+  }
+  .footergnr h4{
+  	text-align: center;
+  	padding: 10px;
+  }
+  .crtmeetupcontt input[type="text"], .crtmeetupcontt textarea{
+  	display: block;
+  	padding: 10px;
+  	margin-bottom: 20px;
+  	width: 90%;
+  	border: 2px solid #8100FF;
+  }
+  .crtmeetupcontt input[type="submit"]{
+  	width: 90%;
+  	padding: 10px;
+  	background-color: #8100FF;
+  	border:2px solid white;
+  	border-radius: 2px;
+  	color: white;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+
+
+  .crtmeetupcontt form input[type="submit"]:hover{
+  	background-color: white;
+  	border:2px solid #8100FF;
+  	border-radius: 2px;
+  	color: #8100FF;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  }
+  /* CREATE MEETUP PAGE */
+  /* EDIT MEETUP PAGE */
+  .previewwell{
+  	padding: 4px 10px;
+  	margin-left: 5%;
+  	background-color: rgb(201, 201, 201);
+  	width: 80%;
+  	border-left: 2px solid red;
+  	color: rgb(70, 70, 70);
+  }
+  .previewwell img{
+  	height: 150px;
+  }
+  /* EDIT MEETUP PAGE */
+
+  /* INDEX PAGE */
+  .indexbody{
+  	padding: 0;
+  	margin: 0;
+  }
+  .indexnavbar{
+  	width: 100%;
+  	background-color: black;
+  }
+  li.indxuserbtnsscrtmet{
+  	display: inline;
+  }
+  .indexnavbar .logoutnav, .indexnavbar .admnsalut{
+  	display: none;
+  }
+  .indexbanner{
+  	background-image: url('../images/meetup.jpg');
+  	background-size: 100%;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	height: 300px;
+  }
+  .banneroverlay{
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(212, 51, 200, 0.7);
+  	color: white;
+  	text-shadow: 1px 1px 2px black;
+  	border-bottom: 2px solid #8100FF;
+  }
+  .banneroverlay h3, .banneroverlay p{
+  	margin: 0 auto;
+  	text-align: center;
+  	text-transform: capitalize;
+  	position: relative;
+  	top: 70px;
+
+  }
+  .banneroverlay p{
+  	margin-top: 20px;
+  }
+  .meetupscontainer{
+  	display: flex;
+  	padding: 10px 20px;
+  	flex-wrap: wrap;
+  	justify-content: space-around;
+  }
+  .meetupscontainer .meetup{
+  	flex: 1 1 0;
+  	min-width: 300px;
+  	margin-right: 2$;
+  	max-width: 200px;
+  	margin-bottom: 1%;
+  	height: 370px;
+  	box-shadow: 0 0 4px black;
+  }
+  .meetupbackdrp{
+  	background-image: url('../images/meetup.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  }
+
+  .meetupbackdrp2{
+  	background-image: url('../images/change.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  	min-height: 200px;
+  }
+  .meetupbackdrp3{
+  	background-image: url('../images/scene.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	height: 58%;
+  }
+  .meetupcontent{
+  	padding: 2px;
+  }
+  .meetupcontent h5{
+  	margin: 2px 4px;
+  	text-align: center;
+  	text-transform: capitalize;
+  }
+  .meetupcontent p{
+  	text-align: center;
+  	color: rgba(112, 116, 112, 0.94);
+  	font-weight: lighter;
+  }
+  .meetupreadmore a{
+  	text-decoration: none;
+  	color: #8100FF;
+  	text-transform: uppercase;
+  	margin-left: 29%;
+  }
+
+  .indxfooter{
+   background-color: black;
+   color: white;
+   padding: 10px 0;
+   text-align: center;;
+  }
+
+  /* INDEX PAGE */
+
+  /* ACCOUNT PROFILE PAGE */
+  .profilebod{
+  	background-image: url('../images/doodle.jpg');
+  	background-size: 30%;
+  	background-repeat: repeat;
+  	min-height: 100vh;
+  	margin: 0;
+  	padding: 0;
+  }
+  .userprofacc{
+  	background-color: white;
+  	width: 60%;
+  	margin: 0 auto;
+  	height: auto;
+  	min-height: 90vh;
+  }
+  .overlder{
+  	width: 100%;
+  	min-height: 100%;
+  	background-color: rgba(129, 0, 255, 0.68);
+  }
+  .accimagprof{
+  	height: 150px;
+  	width:150px;
+  	border: 2px solid black;
+  	margin: 0 auto;
+  	border-radius: 50%;
+  	background-image: url('../images/doodle.jpg');
+  	background-size: 100%;
+  }
+  .userprofacc{
+  	padding-top: 20px;
+  }
+  .userprofacc h4{
+  	text-align: center;
+  }
+  .classyrule{
+  	width: 50%;
+  	margin: 0 auto;
+  	border-bottom: 1px solid gainsboro;
+  }
+  .qsntsposted{
+  	width: 45%;
+  	margin-top: 20px;
+  	display: inline-block;
+  }
+  .qsntsposted .qstnpstchld{
+  	width: 100%;
+  	height: 40px;
+  }
+  .qstnpstchld h4{
+  	margin: 1% 0;
+  	padding: 2px 0;
+  }
+
+  .qstnchldtitle{
+  	padding: 0;
+  	margin: 0;
+  	color: rgba(40, 40, 40, 0.65);
+  }
+  .upcomingmeetupsprof h3{
+  	text-align: center;
+  }
+  .upcomingmeetupsprof{
+  	height: 500px;
+  	width: 100%;
+  	background-color: gainsboro;
+  	padding-top: 10px;
+  }
+  .meetupqustns li{
+  	margin: 3px auto;
+  }
+  .meetupqustns li a{
+  	text-decoration: none;
+  }
+  /* ACCOUNT PROFILE PAGE */
+
+  /* VIEW MEETUP PAGE */
+  .accountbtnsadmin li a{
+  	color: white;
+  	text-decoration: none;
+  }
+  .accountbtnsadmin li a:hover{
+  	color: black;
+  	text-decoration: none;
+  }
+  .meetupdetailsviewiing{
+  	min-height: 200px;
+  	min-width:70%;
+  	max-width: 70%;
+  	text-align: center;
+  	padding: 20px;
+  	box-sizing: border-box;
+  	background-color: rgba(159, 155, 156, 0.42);
+  }
+
+  .meetupdetailsviewiing h4{
+  	margin: 0 auto;
+  	text-transform: uppercase;
+  }
+  .meetupdetailsviewiing p{
+  	text-align: left;
+  }
+  .questionmeetup{
+  	width: 100%;
+  	padding-left: 30px;
+  }
+  .qustnstitlemeetupbox{
+  	text-align: center;
+  	text-transform: uppercase;
+  }
+  .qstnactualexceprt{
+  	background-color:gainboro;
+  }
+  .questionslist{
+  	width: 90%;
+  }
+  .questionslist li{
+  	margin-bottom: 2%;
+  }
+  .vmeetupaskqstncontainer{
+  	padding: 20px;
+  }
+  .vmeetupaskqstncontainer textarea, .vmeetupaskqstncontainer input{
+  	width: 90%;
+  	margin-bottom: 2%;
+  	border: 2px solid #8100FF;
+  }
+
+  .vmeetupaskqstncontainer input{
+  	padding: 10px;
+  }
+
+  .adminMeetupbuttons{
+  	margin: 10px auto;
+  }
+
+  .adminMeetupbuttons a{
+  	padding: 20px;
+  	border: 1px solid blue;
+  	color: white;
+  	background-color: blue;
+  	text-decoration: none;
+  }
+  .adminMeetupbuttons .btndanger{
+  	background-color: red;
+  	border: 1px solid red;
+  }
+
+  .questionslist li{
+  	border: 1px solid black;
+  	box-sizing: border-box;
+  	padding: 10px;
+  }
+  .actualquestionsbox button{
+  	text-decoration: none;
+  	color: #8100FF;
+  }
+
+  /* VIEW MEETUP PAGE */
+
+  /* VIEW QUESTION PAGE */
+  .qstrplies li{
+  	padding: 10px;
+  	border: 1px solid black;
+  	list-style: none;
+  	margin-bottom: 10px;
+  }
+  .voteqstnbtns{
+  	margin-top: 2%;
+  	margin-bottom: 3%;
+  }
+  .voteqstnbtns a{
+  	padding: 10px;
+  	text-decoration: none;
+  	color: white;
+  	margin-left: 10%;
+  }
+  .voteqstnbtns .btnsucc{
+  	color: white;
+  	background: blue;
+  }
+  .voteqstnbtns .btndanger{
+  	color: white;
+  	background: red;
+  }
+
+  /* VIEW QUESTION PAGE */
+
+}
+
+.navbar{
+	background-color: black;
+	padding: 20px;
+	display: flex;
+}
+.logo{
+	position: relative;
+	top: -15px;
+}
+
+@media only screen and (min-width: 992px) {
+	.meetup{
+		flex: 1 1 0;
+		flex-shrink: 0;
+	}
+	.meetupcontent h4{
+		text-align: center;
+	}
+	.meetup{
+		height: auto;
+	}
+	.logo{
+
+	}
+	.meetupscontainer{
+		justify-content: space-between;
+	}
+
+}
