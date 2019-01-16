@@ -87,7 +87,7 @@ class patchdownvotequestion(Resource):
 
 
 @UserApi.route('/api/v1/questions/<questionid>/downvote')
-class SpeficicErrorsForUpvoteFunctionality(Resource):
+class SpeficicErrorsFordownUpvoteFunctionality(Resource):
     def get(self, questionid):
         return customrqstHndlr.wrong_variable_rule('question ID')
 
@@ -113,7 +113,7 @@ class createMeetupRsvp(Resource):
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
 
 @UserApi.route('/api/v1/users')
-class createMeetupRsvp(Resource):
+class CreateUserAccount(Resource):
     def post(self):
         UserRegDetails = request.get_json()
         if UserRegDetails:
@@ -142,5 +142,21 @@ class createMeetupRsvp(Resource):
                 return customrqstHndlr.custom_request_made_max_min_missing(400, 'firstname', 100, 1)
             # insert validator here
             
+        else:
+            return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
+
+@UserApi.route('/api/v1/users/login')
+class UserLogin(Resource):
+    def post(self):
+        LoginCredentials = request.get_json()
+        if LoginCredentials:
+            #check for username /email
+            if validatr.x_in_data('password', LoginCredentials) and validatr.x_instance_of(LoginCredentials['password'], str) and not validatr.x_too_large(LoginCredentials['password'], 50) and not validatr.x_too_small(LoginCredentials['password'], 7):
+                if validatr.x_in_data('email', LoginCredentials) and validatr.x_instance_of(LoginCredentials['email'], str) and validatr.check_whether_email(LoginCredentials['email']) and not validatr.x_too_large(LoginCredentials['email'], 100) and not validatr.x_too_small(LoginCredentials['email'], 7):
+                    return userCtnr.RetrieveUsers(LoginCredentials)
+                else:
+                    return customrqstHndlr.custom_request_made(400, 'email did not pass our validation please review it and try again')
+            else:
+                return customrqstHndlr.custom_request_made(400, 'Your password looks ood, Please review it and try again')
         else:
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
