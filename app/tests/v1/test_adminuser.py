@@ -17,6 +17,14 @@ class TestAdminEndpoints(unittest.TestCase):
         self.response_message = self.client.post('api/v1/meetups',
                                                  data=json.dumps(DataStrctPayloads.meetuppayload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 201)
+    
+    def test_createmeetup_properdata_wrong_method(self):
+        self.response_message = self.client.put('api/v1/meetups',
+                                                 data=json.dumps(DataStrctPayloads.meetuppayload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 405)
+        self.response_message = self.client.patch('api/v1/meetups',
+                                                 data=json.dumps(DataStrctPayloads.meetuppayload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 405)
 
     def test_createmeetup_nodata(self):
         self.response_message = self.client.post('api/v1/meetups',

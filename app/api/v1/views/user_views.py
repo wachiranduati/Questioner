@@ -27,18 +27,54 @@ userCtnr = UserController()
 class getall(Resource):
     def get(self):
         return meetupcntrl.getall_meetups()
+    
+    def post(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
 
+    def delete(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
 
 @UserApi.route('/api/v1/meetups/<int:id>')
 class getspecific(Resource):
     def get(self, id):
         return meetupcntrl.getone_meetup(id)
 
+    def post(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
 
 @UserApi.route('/api/v1/meetups/<id>')
 class getspecificerrors(Resource):
     def get(self, id):
         return customrqstHndlr.wrong_variable_rule(id)
+
+    def post(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
 
 
 @UserApi.route('/api/v1/questions')
@@ -67,11 +103,30 @@ class postquestion(Resource):
         else:
             return customrqstHndlr.custom_request_made(400, 'The request made was empty, Please provide all the necessary fields')
 
+    
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
 
 @UserApi.route('/api/v1/questions/<int:questionid>/upvote')
 class patchupvotequestion(Resource):
     def put(self, questionid):
         return qstnscntrl.upvoteQuestion(questionid)
+
+    def post(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def delete(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
 
 
 @UserApi.route('/api/v1/questions/<questionid>/upvote')
@@ -79,11 +134,32 @@ class SpeficicErrorsForUpvoteFunctionality(Resource):
     def get(self, questionid):
         return customrqstHndlr.wrong_variable_rule('question ID')
 
+    def post(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
 
 @UserApi.route('/api/v1/questions/<int:questionid>/downvote')
 class patchdownvotequestion(Resource):
     def put(self, questionid):
         return qstnscntrl.downvoteQuestion(questionid)
+
+    def post(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def delete(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
 
 
 @UserApi.route('/api/v1/questions/<questionid>/downvote')
@@ -91,11 +167,35 @@ class SpeficicErrorsFordownUpvoteFunctionality(Resource):
     def get(self, questionid):
         return customrqstHndlr.wrong_variable_rule('question ID')
 
+    def post(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self, questionid):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
 
 @UserApi.route('/api/v1/meetups/rsvps')
 class ShowallRsvps(Resource):
     def get(self):
         return rsvpCntr.showall_rsvps()
+    
+    def post(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
 
 
 @UserApi.route('/api/v1/meetups/<int:meetupid>/rsvps')
@@ -145,6 +245,16 @@ class CreateUserAccount(Resource):
         else:
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
 
+    
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
 @UserApi.route('/api/v1/users/login')
 class UserLogin(Resource):
     def post(self):
@@ -160,3 +270,12 @@ class UserLogin(Resource):
                 return customrqstHndlr.custom_request_made(400, 'Your password looks ood, Please review it and try again')
         else:
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
+    
+    def put(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+
+    def delete(self, id):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')
+    
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, 'Method not allowed on this endpoint')

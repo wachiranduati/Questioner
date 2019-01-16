@@ -15,6 +15,26 @@ class TestUserEndpoints(unittest.TestCase):
     def test_getallmeetups(self):
         self.response_message = self.client.get('/api/v1/meetups/upcoming')
         self.assertEqual(self.response_message.status_code, 200)
+    
+    def test_getallmeetups_wrong_methods(self):
+        self.response_message = self.client.put('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+    
+    def test_getallmeetups_wrong_methods_post(self):
+        self.response_message = self.client.post('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+    
+    def test_getallmeetups_wrong_methods_patch(self):
+        self.response_message = self.client.patch('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+
+    def test_getallmeetups_wrong_methods_put(self):
+        self.response_message = self.client.put('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+
+    def test_getallmeetups_wrong_methods_delete(self):
+        self.response_message = self.client.delete('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
 
     def test_getspecificmeetup_success(self):
         self.response_message = self.client.get('/api/v1/meetups/1')

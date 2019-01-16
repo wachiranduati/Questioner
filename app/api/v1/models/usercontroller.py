@@ -66,14 +66,3 @@ class UserController():
                 return self.throwUserErrorClash(400, "Wrong username/email password combination")
         else:
             return self.throwUserErrorClash(404, "User with that email does not exist, Please use try again")
-
-        
-
-    def RetrieveSingleUser(self, id):
-        pass
-
-    def UpdateUser(self, id):
-        pass
-    
-    def DeleteUser(self, id):
-        pass

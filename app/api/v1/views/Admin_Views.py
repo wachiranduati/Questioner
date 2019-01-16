@@ -49,6 +49,13 @@ class AdminCreateMeetup(Resource):
             return customrqstHndlr.custom_request_made(400, "You didn't send any of the required fields in your request.")
             # location images topic happeningOn tags details
 
+    def get(self):
+        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+
 @api.route('/api/v1/meetups')
 class AdminDeleteMeetup(Resource):
     def delete(self):
