@@ -104,14 +104,33 @@ class TestUserEndpoints(unittest.TestCase):
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(''), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
+    
+    def test_user_registrationEmpty(self):
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(DataStrctPayloads.space_username_userpayload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
 
     def test_user_registration(self):
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 201)
     
-    def test_user_registration(self):
+    def test_user_registrationMultiple(self):
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 409)
+    
+    
+    def test_user_registration_firstname_missing(self):
         self.badpayload = DataStrctPayloads.good_user_payload().pop('firstname')
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(self.badpayload), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
+    
+    def test_user_registration_email_missing(self):
+        self.badpayload = DataStrctPayloads.good_user_payload().pop('email')
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(self.badpayload), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)

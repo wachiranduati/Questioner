@@ -331,6 +331,14 @@ class ValidatorTestSys(unittest.TestCase):
         self.assertTrue(resp)
         resp = self.validt.check_whether_email('example.com')
         self.assertFalse(resp)
+    
+    def test_username(self):
+        resp = self.validt.check_space_username('toon')
+        self.assertFalse(resp)
+        resp = self.validt.check_space_username('toon nwirk')
+        self.assertTrue(resp)
+        resp = self.validt.check_space_username('to on')
+        self.assertTrue(resp)
 
 # meetup specific
 

@@ -77,3 +77,9 @@ class PostedDataValidator():
             return True
         else:
             return False
+
+    def check_space_username(self, x):
+        if " " in x:
+            return True
+        else:
+            return False
