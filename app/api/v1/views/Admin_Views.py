@@ -52,9 +52,9 @@ class AdminCreateMeetup(Resource):
     def get(self):
         return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
     def put(self):
-        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+        return customrqstHndlr.custom_request_made(405, "The put method is not allowed on this route.")
     def patch(self):
-        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+        return customrqstHndlr.custom_request_made(405, "The patch method is not allowed on this route.")
 
 @api.route('/api/v1/meetups')
 class AdminDeleteMeetup(Resource):
