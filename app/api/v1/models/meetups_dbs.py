@@ -55,7 +55,9 @@ class DataStructureDatabase():
                 ,"othername" : "Wachira" 
                 ,"email" : "example @ example.com" 
                 ,"phoneNumber" : "+254705780775",
-                "username" : "toon" 
+                "username" : "toon",
+                "password": "34k3kddsole32sld",
+                "passwordconfirmation": "34k3kddsole32sld"
                 }
 
     def meetuppayload(self):
