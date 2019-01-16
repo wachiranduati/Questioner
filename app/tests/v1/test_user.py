@@ -105,5 +105,16 @@ class TestUserEndpoints(unittest.TestCase):
                                                  data=json.dumps(''), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
 
+    def test_user_registration(self):
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 201)
+    
+    def test_user_registration(self):
+        self.badpayload = DataStrctPayloads.good_user_payload().pop('firstname')
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(self.badpayload), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
+
     def tearDown(self):
         self.app = None

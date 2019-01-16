@@ -326,6 +326,12 @@ class ValidatorTestSys(unittest.TestCase):
             'location', self.meetup_provided, 100, 4, str)
         self.assertTrue(resp)
 
+    def test_email(self):
+        resp = self.validt.check_whether_email('example@example.com')
+        self.assertTrue(resp)
+        resp = self.validt.check_whether_email('example.com')
+        self.assertFalse(resp)
+
 # meetup specific
 
     def tearDown(self):

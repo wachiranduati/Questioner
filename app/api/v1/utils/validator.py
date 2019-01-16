@@ -1,3 +1,4 @@
+import re
 maxminlength = {
     "maxtitle": 50,
     "maxbody": 1500,
@@ -70,3 +71,9 @@ class PostedDataValidator():
 
     # 'location','images','topic','happeningOn','Tags','details'
     # def validateLocation(self,)
+    def check_whether_email(self, x):
+        match = re.match(r"^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$", x)
+        if match:
+            return True
+        else:
+            return False

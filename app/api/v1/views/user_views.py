@@ -5,6 +5,8 @@ from app.api.v1.models.questionscontroller import QuestionsController
 from app.api.v1.models.rsvpcontroller import RsvController
 from app.api.v1.utils.customrequesthandler import CustomValidationRequestHandler
 from app.api.v1.utils.validator import PostedDataValidator
+from app.api.v1.models.usercontroller import UserController
+
 
 
 from datetime import datetime
@@ -18,6 +20,7 @@ qstnscntrl = QuestionsController()
 rsvpCntr = RsvController()
 customrqstHndlr = CustomValidationRequestHandler()
 validatr = PostedDataValidator()
+userCtnr = UserController()
 
 
 @UserApi.route('/api/v1/meetups/upcoming')
@@ -114,6 +117,27 @@ class createMeetupRsvp(Resource):
     def post(self):
         UserRegDetails = request.get_json()
         if UserRegDetails:
+            # insert validator here
+            if validatr.x_in_data('firstname', UserRegDetails) and validatr.x_instance_of(UserRegDetails['firstname'], str) and not validatr.x_too_large(UserRegDetails['firstname'], 100) and not validatr.x_too_small(UserRegDetails['firstname'], 1):
+                if validatr.x_in_data('lastname', UserRegDetails) and validatr.x_instance_of(UserRegDetails['lastname'], str) and not validatr.x_too_large(UserRegDetails['lastname'], 100) and not validatr.x_too_small(UserRegDetails['lastname'], 1):
+                    if validatr.x_in_data('othername', UserRegDetails) and validatr.x_instance_of(UserRegDetails['othername'], str) and not validatr.x_too_large(UserRegDetails['othername'], 100) and not validatr.x_too_small(UserRegDetails['othername'], 1):
+                        if validatr.x_in_data('email', UserRegDetails) and validatr.x_instance_of(UserRegDetails['email'], str) and validatr.check_whether_email(UserRegDetails['email']) and not validatr.x_too_large(UserRegDetails['email'], 100) and not validatr.x_too_small(UserRegDetails['email'], 1):
+                            if validatr.x_in_data('phoneNumber', UserRegDetails) and validatr.x_instance_of(UserRegDetails['phoneNumber'], str) and not validatr.x_too_large(UserRegDetails['phoneNumber'], 20) and not validatr.x_too_small(UserRegDetails['phoneNumber'], 7):
+                                if validatr.x_in_data('username', UserRegDetails) and validatr.x_instance_of(UserRegDetails['username'], str) and not validatr.x_too_large(UserRegDetails['username'], 20) and not validatr.x_too_small(UserRegDetails['username'], 2):
+                                    return userCtnr.CreateUser(UserRegDetails)
+                                else:
+                                    return customrqstHndlr.custom_request_made_max_min_missing(400, 'username', 20, 7) 
+                            else:
+                               return customrqstHndlr.custom_request_made_max_min_missing(400, 'phonenumber', 20, 7) 
+                        else:
+                            return customrqstHndlr.custom_request_made(400, 'Your email did not pass the required checks please review it and try again')
+                    else:
+                        return customrqstHndlr.custom_request_made_max_min_missing(400, 'othername', 100, 1)
+                else:
+                    return customrqstHndlr.custom_request_made_max_min_missing(400, 'lastname', 100, 1)
+            else:
+                return customrqstHndlr.custom_request_made_max_min_missing(400, 'firstname', 100, 1)
+            # insert validator here
             
         else:
             return customrqstHndlr.custom_request_made(400, 'You sent an empty request...Please post the relevant data and try again')
