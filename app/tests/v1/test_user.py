@@ -47,6 +47,14 @@ class TestUserEndpoints(unittest.TestCase):
             '/api/v1/questions/1000000000/upvote')
         self.assertEqual(self.response_message.status_code, 404)
 
+    def test_upvote_wrong_id(self):
+        self.response_message = self.client.get('/api/v1/questions/things/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+        self.response_message = self.client.get('/api/v1/questions/2.3/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+        self.response_message = self.client.get('/api/v1/questions/0/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+
     def test_upvotequestionSuccess(self):
         """  run after successfully creating a question """
         self.response_message = self.client.post('/api/v1/questions',
@@ -105,15 +113,14 @@ class TestUserEndpoints(unittest.TestCase):
                                                  data=json.dumps(''), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
     
-    def test_user_registrationEmpty(self):
+    def test_user_registrationSpacedUsername(self):
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(DataStrctPayloads.space_username_userpayload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
-
-    def test_user_registration(self):
-        self.response_message = self.client.post('/api/v1/users',
-                                                 data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
-        self.assertEqual(self.response_message.status_code, 201)
+    
+    # def test_user_registration(self):
+    #     self.response_message = self.client.post('/api/v1/users', data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
+    #     self.assertEqual(self.response_message.status_code, 201)
     
     def test_user_registrationMultiple(self):
         self.response_message = self.client.post('/api/v1/users',
@@ -134,6 +141,13 @@ class TestUserEndpoints(unittest.TestCase):
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(self.badpayload), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
+
+    def test_user_login_success_username(self):
+        self.response_message = self.client.post('/api/v1/users',
+                                                 data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
+        self.response_message = self.client.post('/api/v1/users/login',
+                                                 data=json.dumps(DataStrctPayloads.solid_login_credentials()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 200)
 
     def tearDown(self):
         self.app = None

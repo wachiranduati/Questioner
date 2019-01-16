@@ -32,6 +32,20 @@ class TestAdminEndpoints(unittest.TestCase):
         self.response_message = self.client.post('api/v1/meetups',
                                                  data=json.dumps(DataStrctPayloads.meetup_longer_payload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
+    
+    def test_creatmeetup_wrong_instance_location(self):
+        self.response_message = self.client.post('api/v1/meetups',
+                                                 data=json.dumps(DataStrctPayloads.meetup_wrong_instance()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
+    def test_single_userfield_empty(self):
+        self.response_message = self.client.post('api/v1/meetups',
+                                                 data=json.dumps(DataStrctPayloads.meetup_wrong_instance()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
+
+    def test_single_userfield_empty_meetup(self):
+        self.response_message = self.client.post('api/v1/meetups',
+                                                 data=json.dumps(DataStrctPayloads.meetup_with_empty_field()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 400)
 
     def tearDown(self):
         self.app = None

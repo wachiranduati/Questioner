@@ -9,6 +9,24 @@ class DataStructureDatabase():
             "details": "lorem ipsum and some other mumbo jumbo all foall in here"
         }
 
+        self.payload_with_empty_field = {
+            "location": "Kangundo",
+            "images": ["https://placeholder.io", "https://placeingine.io"],
+            "topic": "Biking to MT longonot",
+            "happeningOn": "12-23-2019",
+            "Tags": ["bike", "bonding", "cheki maneno"],
+            "details": ""
+        }
+
+        self.wrong_instance_payload_location = {
+            "location": 1,
+            "images": ["https://placeholder.io", "https://placeingine.io"],
+            "topic": "Biking to MT longonot",
+            "happeningOn": "12-23-2019",
+            "Tags": ["bike", "bonding", "cheki maneno"],
+            "details": "lorem ipsum and some other mumbo jumbo all foall in here"
+        }
+
         self.incomplete_payload = {
             "location": "Kangundo",
             "images": ["https://placeholder.io", "https://placeingine.io"],
@@ -70,6 +88,13 @@ class DataStructureDatabase():
                 "passwordconfirmation": "34k3kddsole32sld"
                 }
 
+        self.loginCredentials = {
+                
+                "email" : "example@example.com",
+                "username" : "toon",
+                "password": "34k3kddsole32sld"
+                }
+
     def meetuppayload(self):
         return self.payload
 
@@ -78,10 +103,7 @@ class DataStructureDatabase():
 
     def meetup_longer_payload(self):
         return self.longer_payload
-
-    def questionsdb(self):
-        return self.questionsdbs
-
+        
     def questions_payload(self):
         return self.question_payload
 
@@ -99,3 +121,12 @@ class DataStructureDatabase():
 
     def space_username_userpayload(self):
         return self.userpayload_spaced_username
+
+    def solid_login_credentials(self):
+        return self.loginCredentials
+    
+    def meetup_wrong_instance(self):
+        return self.wrong_instance_payload_location
+
+    def meetup_with_empty_field(self):
+        return self.payload_with_empty_field
