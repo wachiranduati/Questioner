@@ -49,6 +49,15 @@ class DataStructureDatabase():
             "response": "yes"
         }
 
+        self.userpayload_success = {
+                "firstname" : "Nicholas" 
+                ,"lastname" : "Nduati" 
+                ,"othername" : "Wachira" 
+                ,"email" : "example @ example.com" 
+                ,"phoneNumber" : "+254705780775",
+                "username" : "toon" 
+                }
+
     def meetuppayload(self):
         return self.payload
 
@@ -72,3 +81,6 @@ class DataStructureDatabase():
 
     def rvsp_payload(self):
         return self.properrsvp_payload
+
+    def good_user_payload(self):
+        return self.userpayload_success
