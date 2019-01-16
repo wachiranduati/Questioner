@@ -45,7 +45,7 @@ class UserController():
             if self.user['email'] == data['email'] and self.user['password'] == data['password']:
                 self.user_found = True
                 break
-                
+
         if self.user_found == True:
             return {
                         "status": 200,

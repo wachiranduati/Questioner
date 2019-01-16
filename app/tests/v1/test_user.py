@@ -47,6 +47,14 @@ class TestUserEndpoints(unittest.TestCase):
             '/api/v1/questions/1000000000/upvote')
         self.assertEqual(self.response_message.status_code, 404)
 
+    def test_upvote_wrong_id(self):
+        self.response_message = self.client.get('/api/v1/questions/things/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+        self.response_message = self.client.get('/api/v1/questions/2.3/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+        self.response_message = self.client.get('/api/v1/questions/0/upvote')
+        self.assertEqual(self.response_message.status_code, 400)
+
     def test_upvotequestionSuccess(self):
         """  run after successfully creating a question """
         self.response_message = self.client.post('/api/v1/questions',
