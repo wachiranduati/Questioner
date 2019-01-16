@@ -47,5 +47,8 @@ class TestAdminEndpoints(unittest.TestCase):
                                                  data=json.dumps(DataStrctPayloads.meetup_with_empty_field()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 400)
 
+    def test_single_userfield_delete_meetup(self):
+        
+
     def tearDown(self):
         self.app = None
