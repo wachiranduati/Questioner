@@ -53,9 +53,19 @@ class DataStructureDatabase():
                 "firstname" : "Nicholas" 
                 ,"lastname" : "Nduati" 
                 ,"othername" : "Wachira" 
-                ,"email" : "example @ example.com" 
+                ,"email" : "example@example.com" 
                 ,"phoneNumber" : "+254705780775",
                 "username" : "toon",
+                "password": "34k3kddsole32sld",
+                "passwordconfirmation": "34k3kddsole32sld"
+                }
+        self.userpayload_spaced_username = {
+                "firstname" : "Nicholas" 
+                ,"lastname" : "Nduati" 
+                ,"othername" : "Wachira" 
+                ,"email" : "example@example.com" 
+                ,"phoneNumber" : "+254705780775",
+                "username" : "to on",
                 "password": "34k3kddsole32sld",
                 "passwordconfirmation": "34k3kddsole32sld"
                 }
@@ -86,3 +96,6 @@ class DataStructureDatabase():
 
     def good_user_payload(self):
         return self.userpayload_success
+
+    def space_username_userpayload(self):
+        return self.userpayload_spaced_username

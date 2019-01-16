@@ -123,13 +123,13 @@ class createMeetupRsvp(Resource):
                     if validatr.x_in_data('othername', UserRegDetails) and validatr.x_instance_of(UserRegDetails['othername'], str) and not validatr.x_too_large(UserRegDetails['othername'], 100) and not validatr.x_too_small(UserRegDetails['othername'], 1):
                         if validatr.x_in_data('email', UserRegDetails) and validatr.x_instance_of(UserRegDetails['email'], str) and validatr.check_whether_email(UserRegDetails['email']) and not validatr.x_too_large(UserRegDetails['email'], 100) and not validatr.x_too_small(UserRegDetails['email'], 1):
                             if validatr.x_in_data('phoneNumber', UserRegDetails) and validatr.x_instance_of(UserRegDetails['phoneNumber'], str) and not validatr.x_too_large(UserRegDetails['phoneNumber'], 20) and not validatr.x_too_small(UserRegDetails['phoneNumber'], 7):
-                                if validatr.x_in_data('username', UserRegDetails) and validatr.x_instance_of(UserRegDetails['username'], str) and not validatr.x_too_large(UserRegDetails['username'], 20) and not validatr.x_too_small(UserRegDetails['username'], 2):
+                                if not validatr.check_space_username(UserRegDetails['username']) and validatr.x_in_data('username', UserRegDetails) and validatr.x_instance_of(UserRegDetails['username'], str) and not validatr.x_too_large(UserRegDetails['username'], 20) and not validatr.x_too_small(UserRegDetails['username'], 2):
                                     if validatr.x_in_data('password', UserRegDetails) and validatr.x_instance_of(UserRegDetails['password'], str) and not validatr.x_too_large(UserRegDetails['password'], 20) and not validatr.x_too_small(UserRegDetails['password'], 7) and validatr.x_in_data('passwordconfirmation', UserRegDetails) and UserRegDetails['password'] == UserRegDetails['passwordconfirmation']:
                                         return userCtnr.CreateUser(UserRegDetails)
                                     else:
                                         return customrqstHndlr.custom_request_made(400, "Please ensure that you're password and passord confirmation match")
                                 else:
-                                    return customrqstHndlr.custom_request_made_max_min_missing(400, 'username', 20, 7) 
+                                    return customrqstHndlr.custom_request_made_max_min_missing(400, 'username', 20, 2) 
                             else:
                                return customrqstHndlr.custom_request_made_max_min_missing(400, 'phonenumber', 20, 7) 
                         else:

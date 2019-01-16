@@ -7,7 +7,7 @@ class UserController():
         return {
                     "error": status,
                     "data": [Error]
-                }, 202
+                }, 409
     def CreateUser(self, data):
     # check whether username/phonenumber exists
         for self.user in users:
@@ -23,16 +23,14 @@ class UserController():
                 data['registered'] = str(
                             datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         users.append(data)
-        return data, 201
-        {
+        # return data, 201
+        return {
             "status": 201,
             "data": [{
-                "meetup": self.question['meetup'],
-                "title": self.question['title'],
-                "body": self.question['body'],
-                "votes": self.question['votes']
+                "username": data['username'],
+                "message": "user successfully created"
             }]
-        }, 202
+        }, 201
 
     def RetrieveUsers(self):
         pass
