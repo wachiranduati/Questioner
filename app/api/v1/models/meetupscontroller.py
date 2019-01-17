@@ -77,3 +77,24 @@ class MeetUpController():
             return False
         else:
             return True
+
+    def deleteMeetup(self, data):
+        self.meetup_located = False
+        for self.meetup in meetups:
+            if self.meetup['id'] == data['meetup']:
+                meetups.remove(self.meetup)
+                self.meetup_located = True
+                return {
+                    "status": 200,
+                    "data": [{
+                        "meetupid":self.meetup['id'],
+                        "topic": self.meetup['topic']
+                    }]
+                }, 200
+        
+        if self.meetup_located == False:
+            return {
+                    "error": 404,
+                    "data": ['Record does not exist']
+                }, 404
+            

@@ -41,27 +41,28 @@ class UserController():
 
     def RetrieveUsers(self, data):
         self.user_found = False
+        #check whether user exists first
+        self.email_exists = False
         for self.user in users:
-            if self.user['email'] == data['email'] and self.user['password'] == data['password']:
-                self.user_found = True
+            if self.user['email'] == data['email']:
+                self.email_exists = True
                 break
+        
+        if self.email_exists == True:
+            for self.user in users:
+                if self.user['email'] == data['email'] and self.user['password'] == data['password']:
+                    self.user_found = True
+                    break
 
-        if self.user_found == True:
-            return {
-                        "status": 200,
-                        "data": [{
-                            "username": self.user['username'],
-                            "message": "successfully logged in"
-                        }]
-                    }, 200
+            if self.user_found == True:
+                return {
+                            "status": 200,
+                            "data": [{
+                                "username": self.user['username'],
+                                "message": "successfully logged in"
+                            }]
+                        }, 200
+            else:
+                return self.throwUserErrorClash(400, "Wrong username/email password combination")
         else:
-            return self.throwUserErrorClash(400, "Wrong username/email password combination")
-
-    def RetrieveSingleUser(self, id):
-        pass
-
-    def UpdateUser(self, id):
-        pass
-    
-    def DeleteUser(self, id):
-        pass
+            return self.throwUserErrorClash(404, "User with that email does not exist, Please use try again")

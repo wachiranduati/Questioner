@@ -91,7 +91,6 @@ class DataStructureDatabase():
         self.loginCredentials = {
                 
                 "email" : "example@example.com",
-                "username" : "toon",
                 "password": "34k3kddsole32sld"
                 }
 

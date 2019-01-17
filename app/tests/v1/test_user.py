@@ -15,6 +15,26 @@ class TestUserEndpoints(unittest.TestCase):
     def test_getallmeetups(self):
         self.response_message = self.client.get('/api/v1/meetups/upcoming')
         self.assertEqual(self.response_message.status_code, 200)
+    
+    def test_getallmeetups_wrong_methods(self):
+        self.response_message = self.client.put('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+    
+    def test_getallmeetups_wrong_methods_post(self):
+        self.response_message = self.client.post('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+    
+    def test_getallmeetups_wrong_methods_patch(self):
+        self.response_message = self.client.patch('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+
+    def test_getallmeetups_wrong_methods_put(self):
+        self.response_message = self.client.put('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
+
+    def test_getallmeetups_wrong_methods_delete(self):
+        self.response_message = self.client.delete('/api/v1/meetups/upcoming')
+        self.assertEqual(self.response_message.status_code, 405)
 
     def test_getspecificmeetup_success(self):
         self.response_message = self.client.get('/api/v1/meetups/1')
@@ -122,6 +142,7 @@ class TestUserEndpoints(unittest.TestCase):
     #     self.response_message = self.client.post('/api/v1/users', data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
     #     self.assertEqual(self.response_message.status_code, 201)
     
+    
     def test_user_registrationMultiple(self):
         self.response_message = self.client.post('/api/v1/users',
                                                  data=json.dumps(DataStrctPayloads.good_user_payload()), content_type="application/json")
@@ -148,6 +169,11 @@ class TestUserEndpoints(unittest.TestCase):
         self.response_message = self.client.post('/api/v1/users/login',
                                                  data=json.dumps(DataStrctPayloads.solid_login_credentials()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 200)
+
+    # def test_user_login_user_not_exist(self):
+    #     self.response_message = self.client.post('/api/v1/users/login',
+    #                                              data=json.dumps(DataStrctPayloads.solid_login_credentials()), content_type="application/json")
+    #     self.assertEqual(self.response_message.status_code, 404)
 
     def tearDown(self):
         self.app = None

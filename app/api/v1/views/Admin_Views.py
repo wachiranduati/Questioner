@@ -48,3 +48,25 @@ class AdminCreateMeetup(Resource):
         else:
             return customrqstHndlr.custom_request_made(400, "You didn't send any of the required fields in your request.")
             # location images topic happeningOn tags details
+
+    def get(self):
+        return customrqstHndlr.custom_request_made(405, "The get method is not allowed on this route.")
+    def put(self):
+        return customrqstHndlr.custom_request_made(405, "The put method is not allowed on this route.")
+    def patch(self):
+        return customrqstHndlr.custom_request_made(405, "The patch method is not allowed on this route.")
+
+@api.route('/api/v1/meetups')
+class AdminDeleteMeetup(Resource):
+    def delete(self):
+        MeetupId = request.get_json()
+        if MeetupId:
+            if len(MeetupId) == 1:
+                if validatr.x_in_data('meetup', MeetupId) and validatr.x_instance_of(MeetupId['meetup'], int):
+                    return meetupcntrl.deleteMeetup(MeetupId)
+                else:
+                    return customrqstHndlr.custom_request_made(400, "Your request data did not pass our validation Please ensure that you have your id as an integer")
+            else:
+                return customrqstHndlr.custom_request_made(413, "Sorry you're request was aborted, Only the meetup id is expected in this request")
+        else:
+            return customrqstHndlr.custom_request_made(400, "You didn't send any of the required fields in your request.")
