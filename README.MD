@@ -16,6 +16,7 @@ Questioner is a web app that enables users to create meetups and post questions 
  6. Rsvp for a meetup.
 
 ## Functional Api Endpoints
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/16214aa917050d5b8926)
 
 Method        | EndPoint      | Functionality |
 ------------- | ------------- | ---------------
@@ -27,6 +28,8 @@ POST  | /api/v1/questions | Create a question for a specific meetup.   |
 PUT  | /api/v1/questions/<question-id>/upvote | Upvote (increase votes by 1) a specific question.   |
 PUT | /api/v1/questions/<question-id>/downvote | Downvote (decrease votes by 1) a specific question.   |
 POST | /api/v1/meetups/<meetup-id>/rsvps| Respond to meetup RSVP. 
+
+[View the Questioner documentation](https://documenter.getpostman.com/view/6358115/RznLHGqe)
 
 ## Getting Started
 
@@ -65,6 +68,36 @@ To run tests on this application simply run pytest in the root folder of the app
 
 > $ pytest
 
+###### Typical test on an end point on Questioner
+*This is how a correct payload to the `create meetup endpoint` [here](https://questionerplus.herokuapp.com/api/v1/meetups)* looks like.
+>{
+"location" : "Kasabun",
+"images" : ["https://test.materia.io", "https://doesitwork.com"],
+"topic" : "Purely testing this",
+"happeningOn" : "12-23-2010",
+"Tags" : ["Grand Turismo", "Nduthify", "Sleep"],
+"details": "lorem ipsum and some other mumbo jumbo all foall in here"
+}
+
+###### Expected success response
+
+>{
+    "status": 201,
+    "data": "The meetup *Purely testing this* was created successfully"
+}
+
+##### Response should an error arise
+*This was due to a missing **location** field*
+{
+    "status": 400,
+    "error": "Error with the request field the location field should not be longer than 100 nor smaller than 4 or does not exist"
+}
+
+*This was trying to send the same payload again **recreate the same meetup** *
+{
+    "status": 409,
+    "error": "Sorry the meetup already exists"
+}
 
 ## Built With
 
@@ -88,4 +121,5 @@ This project is licensed under the MIT License
 * *Nbo-36 #Team3*
 * Solomon Macharia
 * Kelyn Paul
+* Jackline Muthoni
 * Nbo-36 members
