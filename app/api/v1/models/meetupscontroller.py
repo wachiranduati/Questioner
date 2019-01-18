@@ -16,10 +16,13 @@ class MeetUpController():
     def __init__(self):
         self.required = ['location', 'topic', 'happeningOn', 'Tags', 'details']
         self.all_required_fields_present = True
+        self.allchecks = False
+        
 
     def create_meetup(self, data):
         """ Method appends a new meetup to the meetups list"""
         # check whether all required fields are present
+        self.topic_exist = False
         for self.requiredField in self.required:
             if self.requiredField not in data:
                 self.all_required_fields_present = False
@@ -27,7 +30,12 @@ class MeetUpController():
                 break
 
         if self.all_required_fields_present == True:
-            # if validatr.all_checks('location', data, 100, 4, str) ==
+            for self.meetup in meetups:
+                if self.meetup['topic'] == data['topic']:
+                    self.topic_exist = True
+                    break
+        
+        if self.topic_exist == False:
             if 'images' in data:
                 data['images'] = data['images'][:2]
 
@@ -35,9 +43,10 @@ class MeetUpController():
             data['createOn'] = str(
                 datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
             meetups.append(data)
-            return True
+            return customrqstHndlr.success_request_made(201, 'The meetup {} was created successfully'.format(data['topic']))
         else:
-            return [False, self.missing_field]
+            return customrqstHndlr.custom_request_made(409, 'Sorry the meetup already exists')
+
 
     def getone_meetup(self, id):
         self.found = False

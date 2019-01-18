@@ -170,10 +170,7 @@ class TestUserEndpoints(unittest.TestCase):
                                                  data=json.dumps(DataStrctPayloads.solid_login_credentials()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 200)
 
-    # def test_user_login_user_not_exist(self):
-    #     self.response_message = self.client.post('/api/v1/users/login',
-    #                                              data=json.dumps(DataStrctPayloads.solid_login_credentials()), content_type="application/json")
-    #     self.assertEqual(self.response_message.status_code, 404)
+    
 
     def tearDown(self):
         self.app = None

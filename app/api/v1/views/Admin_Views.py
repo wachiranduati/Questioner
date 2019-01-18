@@ -26,13 +26,7 @@ class AdminCreateMeetup(Resource):
                         if validatr.x_in_data('Tags', MeetupData) and validatr.x_instance_of(MeetupData['Tags'], list) and not validatr.x_too_large(MeetupData['Tags'], 9):
                             if validatr.x_in_data('details', MeetupData) and validatr.x_instance_of(MeetupData['details'], str) and not validatr.x_too_small(MeetupData['details'], 8):
                                 # code goes in here
-                                PostMeetupState = meetupcntrl.create_meetup(
-                                    MeetupData)
-                                if PostMeetupState == True:
-                                    return customrqstHndlr.success_request_made(201, customrqstHndlr.success_create_meetup_admin(MeetupData))
-
-                                else:
-                                    return customrqstHndlr.custom_request_missing_field(400, PostMeetupState[-1])
+                                return meetupcntrl.create_meetup(MeetupData)
                                 # code goes in here
                             else:
                                 return customrqstHndlr.custom_request_made_max_min_missing(400, 'details', 3000, 8)
