@@ -38,7 +38,6 @@ class MeetUpController():
         if self.topic_exist == False:
             if 'images' in data:
                 data['images'] = data['images'][:2]
-
             data['id'] = int(len(meetups) + 1)
             data['createOn'] = str(
                 datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
