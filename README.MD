@@ -1,5 +1,5 @@
 # Questioner
-
+![](https://i.imgur.com/SVj3C1U.png)
 Questioner is a web app that enables users to create meetups and post questions and comments on the meetups and do basic log monitoring via the user's profile. Users can monitor upcoming meetups and even go further to have a curated list of top questions on upcoming meetups accessible right in their profile.
 
 [![Build Status](https://travis-ci.org/wachiranduati/Questioner.svg?branch=develop)](https://travis-ci.org/wachiranduati/Questioner)
@@ -88,13 +88,13 @@ To run tests on this application simply run pytest in the root folder of the app
 
 ##### Response should an error arise
 *This was due to a missing **location** field*
-{
+>{
     "status": 400,
     "error": "Error with the request field the location field should not be longer than 100 nor smaller than 4 or does not exist"
 }
 
-*This was trying to send the same payload again **recreate the same meetup** *
-{
+*This was trying to send the same payload again **recreate the same meetup***
+>{
     "status": 409,
     "error": "Sorry the meetup already exists"
 }
