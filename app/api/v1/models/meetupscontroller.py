@@ -31,7 +31,7 @@ class MeetUpController():
 
         if self.all_required_fields_present == True:
             for self.meetup in meetups:
-                if self.meetup['topic'] == data['topic']:
+                if self.meetup['topic'] in data['topic'] or data['topic'] in self.meetup['topic']:
                     self.topic_exist = True
                     break
         
@@ -43,7 +43,7 @@ class MeetUpController():
             data['createOn'] = str(
                 datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
             meetups.append(data)
-            return customrqstHndlr.success_request_made(201, 'The meetup {} was created successfully'.format(data['topic']))
+            return customrqstHndlr.success_request_made(201, 'The meetup *{}* was created successfully'.format(data['topic']))
         else:
             return customrqstHndlr.custom_request_made(409, 'Sorry the meetup already exists')
 
