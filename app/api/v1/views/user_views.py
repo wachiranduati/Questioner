@@ -85,17 +85,12 @@ class postquestion(Resource):
         if questionReceived:
             if validatr.x_in_data('title', questionReceived) and validatr.x_instance_of(questionReceived['title'], str) and not validatr.x_too_large(questionReceived['title'], 50) and not validatr.x_too_small(questionReceived['title'], 5):
                 if validatr.x_in_data('body', questionReceived) and validatr.x_instance_of(questionReceived['body'], str) and not validatr.x_too_small(questionReceived['body'], 50):
-                    # code goes in here
-                    PostQuestionState = qstnscntrl.PostQuestion(
-                        questionReceived)
-                    if PostQuestionState == True:
-                        return customrqstHndlr.success_request_made(201, customrqstHndlr.user_post_questions_to_meetup(questionReceived))
-                    elif PostQuestionState == 'notexist':
-                        return customrqstHndlr.custom_request_made(400, 'Could not post the question, The meetup does not exist')
-
+                    if validatr.x_in_data('meetup', questionReceived) and validatr.x_instance_of(questionReceived['meetup'], int):
+                        # code goes in here
+                        return qstnscntrl.PostQuestion(questionReceived)
+                        # code goes in here
                     else:
-                        return customrqstHndlr.custom_request_made(400, 'Please ensure that you filled in all the required fields')
-                    # code goes in here
+                        return customrqstHndlr.custom_request_made(400, 'Error the meetup is either missing or has been supplied not as an integer')
                 else:
                     return customrqstHndlr.custom_request_made_max_min_missing(400, 'body', 3000, 50)
             else:

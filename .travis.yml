@@ -5,7 +5,7 @@ install:
   - pip3 install -r requirements.txt
   - pip3 install coveralls
 script:
-  - nosetests --with-coverage --cover-package=app  && coverage report
+  - coverage run --source=app/api/ -m pytest app/tests  && coverage report -m
 
 after_success:
   - coveralls

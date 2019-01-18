@@ -3,7 +3,7 @@ class DataStructureDatabase():
         self.payload = {
             "location": "Kangundo",
             "images": ["https://placeholder.io", "https://placeingine.io"],
-            "topic": "Biking to MT longonot",
+            "topic": "Biking to Machakos",
             "happeningOn": "12-23-2019",
             "Tags": ["bike", "bonding", "cheki maneno"],
             "details": "lorem ipsum and some other mumbo jumbo all foall in here"
