@@ -51,6 +51,13 @@ class TestUserEndpoints(unittest.TestCase):
                                                  data=json.dumps(DataStrctPayloads.questions_payload()), content_type="application/json")
         self.assertEqual(self.response_message.status_code, 201)
 
+    def test_userpostquestion_success(self):
+        self.response_message = self.client.post('/api/v1/questions',
+                                                 data=json.dumps(DataStrctPayloads.questions_payload()), content_type="application/json")
+        self.response_message = self.client.post('/api/v1/questions',
+                                                 data=json.dumps(DataStrctPayloads.questions_payload()), content_type="application/json")
+        self.assertEqual(self.response_message.status_code, 409)
+
     def test_userpostquestion_nodata(self):
         self.response_message = self.client.post('/api/v1/questions',
                                                  data=json.dumps(''), content_type="application/json")
