@@ -68,6 +68,8 @@ To run tests on this application simply run pytest in the root folder of the app
 
 > $ pytest
 
+![](https://i.imgur.com/uU7gzAG.gif)
+
 ###### Typical test on an end point on Questioner
 *This is how a correct payload to the `create meetup endpoint` [here](https://questionerplus.herokuapp.com/api/v1/meetups)* looks like.
 >{
@@ -100,7 +102,6 @@ To run tests on this application simply run pytest in the root folder of the app
 }
 
 ## Built With
-
 - ```Python3``` - Python is an object-oriented, high-level programming language with integrated dynamic semantics primarily for web and app development
 
 - ```Flask``` - A microframework for Python based on Werkzeug, Jinja 2 and good intentions.
@@ -116,7 +117,7 @@ To run tests on this application simply run pytest in the root folder of the app
 
 This project is licensed under the MIT License
 
-## Acknowledgments
+## Acknowledgments 
 
 * *Nbo-36 #Team3*
 * Solomon Macharia
